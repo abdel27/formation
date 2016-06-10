@@ -5,6 +5,10 @@ azdoiufhznemsifj
 
 efjhpeaorjfozIEJHFPZEFMOIZSQHFDVPEHFIEDSHLZSHFIE
 
+<<<<<<< HEAD
 
 
 abdel
+=======
+Maxime
+>>>>>>> origin/master
