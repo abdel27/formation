@@ -12,3 +12,7 @@ abdel
 =======
 Maxime
 >>>>>>> origin/master
+
+Karim
+////////////
+hello world
