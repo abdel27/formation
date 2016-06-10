@@ -16,5 +16,3 @@ Maxime
 Karim
 ////////////
 hello world
-
-Christine
