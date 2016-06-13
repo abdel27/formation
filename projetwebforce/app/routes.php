@@ -5,7 +5,7 @@
 
 
 
-    ['GET','/layoutback','Viewt#layoutback', 'layoutback'],
+    ['GET','/layoutback','View#layoutback', 'layoutback'],
     ['GET','/dashboard','Default#dashboard', 'dashboard'],
 
     ['GET','/newannonce','Default#newannonce', 'newannonce'],
@@ -25,6 +25,8 @@
     ['GET','/forget','Default#forget', 'forget'],
     ['POST','/forget','Default#forgetaction', 'forgetaction'],
 
+    ['GET','/manageuser','Default#manageuser', 'manageuser'],
+    ['GET','/edituser','Default#edituser', 'edituser'],
     
     ['GET','/logout','Default#logout', 'logout'],
     

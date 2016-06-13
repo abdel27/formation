@@ -62,7 +62,7 @@ class DefaultController extends Controller
         $password  = trim(strip_tags($_POST['password']));
 
         $validation = new Validation();
-        $error['username']  = $validation->checkValidation($pseudo,'username',3,40);
+        $error['username']  = $validation->checkValidation($username,'username',3,40);
         $error['password']  = $validation->checkValidation($password,'password',8,40);
 
         if ($validation->isValide($error)){
@@ -234,6 +234,23 @@ $this->show('default/forget');
 
 
 
+}
+
+public function manageuser() {
+    $all = new UserModel();
+    $users = $all->findAll();
+
+  $this->show('default/manageuser', array('users' =>$users));
+
+}
+
+
+public function edituser() {
+   
+  $model = new UserModel();
+  $user = $model->find();
+  $this->show('default/edituser' , ['id' => $id]);
+  
 }
       
     

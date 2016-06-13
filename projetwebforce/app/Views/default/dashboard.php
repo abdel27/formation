@@ -35,8 +35,9 @@
             <td><?php echo $post['lof']; ?></td>
             <td><?php echo substr($post['description'],0,70); ?> [...].</td>
             <td><?php echo $post['created_at']; ?></td>
-             <td><a href="">Modifier</a></td>
-            <td><a href="">Supprimer</a></td>
+            <td><a href="<?php echo $this->url("edituser");?>">Modifier</a></td>
+            <td><a href="<?php echo $this->url("deleteuser");?>">Supprimer</a></td>
+
          </tr>
       <?php } ?>
     </tbody>

@@ -9,15 +9,12 @@ use \W\Model\ConnectionModel;
 
 class UserModel extends BaseUser 
 
-
 {
-
-//Proprieté de la class
-
+  
 private $id;
 private $nom;
 private $prenom;
-private $pseudo;
+private $username;
 private $date_naissance;
 private $email;
 private $password;
@@ -27,12 +24,17 @@ private $created_at;
 private $departement;
 private $role;
 private $active;
+private $last_connection;
+private $situation;
+private $adresse;
+private $codepostal;
+private $tel;
+private $city;
 
 
-
-
-//Stokage des messages d'erreurs
+//Pour stocker les messages d'erreurs
 private $error;
+
 
 
 }

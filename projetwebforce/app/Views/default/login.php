@@ -12,11 +12,11 @@ print_r($_SESSION);
       
 
         <div class="form-group">
-          <label for="pseudo">PSEUDO*</label>
+          <label for="username">PSEUDO*</label>
 
           <!--Affichage des message d'erreur si les cntraintes ne sont pas respectées-->
-          <span class="error"><?php if(!empty($error['pseudo'])) { echo $error['pseudo']; } ?></span>
-          <input type="text" name="pseudo" id="pseudo" class="form-control" value="<?php if(!empty($_POST['pseudo'])) { echo $_POST['pseudo']; } ?>" />
+          <span class="error"><?php if(!empty($error['username'])) { echo $error['username']; } ?></span>
+          <input type="text" name="username" id="username" class="form-control" value="<?php if(!empty($_POST['username'])) { echo $_POST['username']; } ?>" />
         </div>
 
         

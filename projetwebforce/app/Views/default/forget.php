@@ -9,10 +9,10 @@
 
 
 
-<h1>Mot de passe perdu!</h1>
+<h1>Mot de passe perdu!</h1>s
 
 
-    <form method="POST" action=""<?php echo $this->url('forgetaction'); ?>"" id="formforgetpassword">
+    <form method="POST" action="<?php echo $this->url('forgetaction'); ?>" id="formforgetpassword">
       <div class="form-group">
         <label for="email">Email*</label>
         <span class="error"><?php if(!empty($errors['email'])) { echo $errors['email']; } ?></span>
