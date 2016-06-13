@@ -21,6 +21,10 @@
     ['GET','/register','Default#register', 'register'],
     ['POST','/register','Default#registeraction', 'registeraction'],
 
+
+    ['GET','/forget','Default#forget', 'forget'],
+    ['POST','/forget','Default#forgetaction', 'forgetaction'],
+
     
     ['GET','/logout','Default#logout', 'logout'],
     

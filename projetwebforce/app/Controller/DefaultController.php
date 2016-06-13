@@ -4,14 +4,21 @@ namespace Controller;
 
 use \Controller\Controller;
 use \Controller\AnnonceController;
+use \W\Security\AuthentificationModel;
 use \Model\AnnonceModel;
+use \Model\UserModel;
+
+use \Security\Validation;
+use \Tools\Tool;
+
+
 
 use \Services\Flash\FlashBags;
 
 class DefaultController extends Controller
 {
 
-	/**
+	/**s
 	 * Page d'accueil par défaut
 	 */
 	public function home()
@@ -51,18 +58,18 @@ class DefaultController extends Controller
 
       if(!empty($_POST['submit'])) {
       // protection XSS
-        $pseudo    = trim(strip_tags($_POST['pseudo']));
+        $username    = trim(strip_tags($_POST['username']));
         $password  = trim(strip_tags($_POST['password']));
 
         $validation = new Validation();
-        $error['pseudo']  = $validation->checkValidation($pseudo,'pseudo',3,40);
+        $error['username']  = $validation->checkValidation($pseudo,'username',3,40);
         $error['password']  = $validation->checkValidation($password,'password',8,40);
 
         if ($validation->isValide($error)){
 
           $AuthentificationModel = new AuthentificationModel();
 
-          $user = $AuthentificationModel->isValidLoginInfo($pseudo, $password);
+          $user = $AuthentificationModel->isValidLoginInfo($username, $password);
 
           //$user = new UsersModel();
           // $poste = $user->find();
@@ -103,7 +110,7 @@ class DefaultController extends Controller
 
       $nom = trim(strip_tags($_POST['nom']));
       $prenom = trim(strip_tags($_POST['prenom']));
-      $pseudo = trim(strip_tags($_POST['pseudo']));
+      $username = trim(strip_tags($_POST['username']));
       $departement = trim(strip_tags($_POST['departement']));
       $email  = trim(strip_tags($_POST['email']));
       $password  = trim(strip_tags($_POST['password']));
@@ -111,31 +118,37 @@ class DefaultController extends Controller
 
 
 
-      $model = new UsersModel();
-      if(!$model->usernameExists($pseudo) OR !$model->emailExists($email) ){
+      $model = new UserModel();
+
+      if(!$model->usernameExists($username) OR !$model->emailExists($email) ){
 
         $validation = new Validation();
         $token = $validation->generateRandomString(50);
 
-        $error['pseudo']  = $validation->checkValidation($pseudo,'pseudo',3,40);
+        $error['username']  = $validation->checkValidation($username,'username',3,40);
         $error['email']   = $validation->validateMail($email,80);
-        $error['password1'] = $validation->testPassword($password1,$password2,8);
+        $error['password'] = $validation->testPassword($password,$password2,8);
 
       if ($validation->isValide($error)){
         $AuthentificationModel = new AuthentificationModel();
         $passhach = $AuthentificationModel->hashPassword($password);
 
-        $data = array('pseudo' => $pseudo ,
+        $data = array('nom' =>$nom ,
+                         'prenom' =>$prenom ,
+                         'username' => $username ,
+                         'date_naissance' => date('Y-m-d') ,
                          'email' => $email ,
                          'password' => $passhach ,
-                         'role' => 'user'  ,
-                         'token' => $token,
+                         'token' => $token ,
                          'ip' => $_SERVER['REMOTE_ADDR'],
                          'created_at' => date('Y-m-d'),
-                         'active' => 'no');
+                         'departement' => $departement,
+                         'role' => 'user'  ,
+                         'active' => 'no' ,
+                         'last_connection' => date('Y-m-d'));
                          
           print_r($data);
-
+          
           //$model = new UsersModel();
           $model->insert($data);
 
@@ -199,7 +212,7 @@ public function newannonceaction()
 
           print_r($data);
           // insertion  
-          $model = new PostModel();
+          $model = new AnnonceModel();
           $model->insert($data);
 
                 // redirection vers le listing admin des articles 
@@ -209,6 +222,18 @@ public function newannonceaction()
                 $this->show('default/newannonce' , array('error' => $error));
             }
   }
+}
+
+
+
+
+public function forget() {
+
+$this->show('default/forget');
+
+
+
+
 }
       
     

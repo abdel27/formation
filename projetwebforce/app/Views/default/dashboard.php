@@ -4,30 +4,39 @@
 
 
 
-<h4>lise des posts</h4>  
+<h4>Listes des annonces</h4>  
 <table class="table">
     <thead>
       <tr>
-        <th>Nume ID</th>
-        <th>Titre</th>
-        <th>Content</th>
-        <th>auteur</th>
+
+        <th>Identifiant</th>
+        <th>Nom</th>
+        <th>Espece</th>
+        <th>Race</th>
+        <th>Sexe</th>
+        <th>Age</th>
+        <th>LOF</th>
+        <th>Description</th>
         <th>Date de creation</th>
-        <th>Modifier</th>
-        <th>Supprimer</th>
+        <th>Action</th>
+        
 
       </tr>
     </thead>
     <tbody>
-      <?php foreach ($poste as $post) { ?>
+      <?php foreach ($annonce as $post) { ?>
         <tr>
             <td><a><?php echo $post['id']; ?></a></td>    
             <td><?php echo $post['nom']; ?></td>
             <td><?php echo $post['espece'];?> [...].</td>
             <td><?php echo $post['race']; ?></td>
+            <td><?php echo $post['sexe']; ?></td>
+            <td><?php echo $post['age']; ?></td>
+            <td><?php echo $post['lof']; ?></td>
             <td><?php echo substr($post['description'],0,70); ?> [...].</td>
             <td><?php echo $post['created_at']; ?></td>
-            <td><a href="">Delete</a></td>
+             <td><a href="">Modifier</a></td>
+            <td><a href="">Supprimer</a></td>
          </tr>
       <?php } ?>
     </tbody>
