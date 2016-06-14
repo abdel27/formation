@@ -16,40 +16,24 @@
 
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+	<!-- Liens vers la font Montserrat -->
+	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700' rel='stylesheet' type='text/css'>
+
+	<!-- Lien vers la feuille de styles CSS -->
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/style.css') ?>">
-	
-	<!-- Fonts -->
-	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Droid+Serif:400,700' rel='stylesheet' type='text/css'>
 </head>
-<<<<<<< HEAD
-<body>
-	<div class="container">
-		<header>
-			<h1>W :: <?= $this->e($title) ?></h1>
-			
-			
-=======
->>>>>>> 9f254428311202bf935635cd6860546d17026d84
 
 <body>
 
-<<<<<<< HEAD
-			<a href="<?php echo $this->url("dashboard");
-			?>">dashboard</a>
-			<a href="<?php echo $this->url("register");
-			?>">S'inscrire</a>
-			<a href="<?php echo $this->url("login");
-			?>">Se conncter</a>
-=======
-<div id="wrapper">	
-	<div class="container">
-		<div class="page-header">
-			<nav class="navbar">
-			  <div class="container-fluid">
+<!-- HEADER -->
+<header>
+	<nav class="navbar">
+			<div class="container-fluid">
 			    <div class="navbar-header">
-			     	<h2><a href="#">Animals</a></h2> 
+			     	<h2><a class="navbar-brand" href="#">Animals</a></h2> 
 			    </div>
->>>>>>> 9f254428311202bf935635cd6860546d17026d84
 
 			    <ul class="nav navbar-nav navbar-right">
 			      <li><a href="#">Consulter les offres</a></li>
@@ -57,42 +41,44 @@
 			      <li><a href="<?php echo $this->url("register");?>"> S'inscrire</a></li>
 			      <li><a href="<?php echo $this->url("register");?>"> Se connecter</a></li>
 			    </ul>
-			  </div>
-			</nav>
-		</div>
-	
+			</div>
+		</nav>
+</header>
 
+<!-- WRAPPER ET CONTENT -->
+<div id="wrapper">
 		<section>
 			<?= $this->section('main_content') ?>
+			qooegoiergpoierbgpieoaroarnhbpoinoia
 		</section>
+</div>
 
-			
-		<div class="panel-footer"> 
-			<div class="container-fluid">
-				<div class="row">
-					<!-- <div class="col-md-4"> -->
-						<ul>
-							<li><a href="#">Consulter les offres</a></li>
-							<li><a href="#">Ajouter des offres</a></li>
-							<li><a href="<?php echo $this->url("register");?>"> Se connecter</a></li>
-						</ul>
-					<!-- </div> -->
-				</div>	
+<!-- FOOTER -->			
+<footer>
+	<div class="container-fluid">
+		<div class="row liens">
+			<!-- <div class="col-lg-4"> -->
+				<ul>
+					<li><a href="#">Consulter les offres</a></li>
+						<li><a href="#">Ajouter des offres</a></li>
+						<li><a href="<?php echo $this->url("register");?>"> Se connecter</a></li>
+					</ul>
+			<!-- </div> -->
+		</div>	
 
-				<div class="row">
-					<!-- <div class="col-md-4"> -->
-						<h2>Animals</h2>
-					<!-- </div> -->
-				</div>
+		<div class="row animals">
+			<!-- <div class="col-lg-4"> -->
+				<h2>Animals</h2>
+			<!-- </div> -->
+		</div>
 
-				<div class="row contact">
-					<!-- <div class="col-md-4"> -->
-						<a href="#">Nous contacter</a>
-					<!-- </div> -->
-				</div>
-			</div>
-		</div> 	
-	</div>
-</div> 
+		<div class="row contact">
+			<!-- <div class="col-lg-4"> --> 
+				<a href="#">Nous contacter</a>
+			<!-- </div> -->
+		</div>
+	</div> 	
+</footer>
+
 </body>
 </html>

@@ -36,7 +36,7 @@
     ['GET','/deleteuser/[:id]','Default#deleteuser', 'deleteuser'],
 
     ['GET','/lienspassword','Default#lienspassword', 'lienspassword'],
-    ['POST','/lienspassword','Default#lienspassword', 'lienspassword'],
+    ['POST','/lienspassword','Default#lienspasswordaction', 'lienspasswordaction'],
     
     ['GET','/logout','Default#logout', 'logout'],
     
