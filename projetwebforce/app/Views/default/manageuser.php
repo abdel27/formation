@@ -52,7 +52,8 @@
             <td><?php echo $post['codepostal']; ?></td>
             <td><?php echo $post['tel']; ?></td>
             <td><?php echo $post['city']; ?></td>
-            <td><a href="">Modifier</a></td>
+            <td><a href="<?php $id=$post['id']; echo $this->url("edituser", ["id" => $id]);
+            ?>">Modifier</a></td>
             <td><a href="">Supprimer</a></td>
          </tr>
       <?php } ?>

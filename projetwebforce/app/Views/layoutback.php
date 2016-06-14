@@ -19,6 +19,7 @@
             <li><a href="<?php echo $this->url("logout");?>">Deconnexion</a></li>
             <li><a href="<?php echo $this->url("manageuser");?>">Gestion des utilisateurs</a></li>
             
+            
           </ul>
         </nav>
       

@@ -18,16 +18,16 @@
 	<div class="container">
 		<header>
 			<h1>W :: <?= $this->e($title) ?></h1>
-
-
+			
+			
 
 
 			<a href="<?php echo $this->url("dashboard");
-			?>">Dashboard</a>
+			?>">dashboard</a>
 			<a href="<?php echo $this->url("register");
 			?>">S'inscrire</a>
 			<a href="<?php echo $this->url("login");
-			?>">Se connecter</a>
+			?>">Se conncter</a>
 
 		</header>
 
