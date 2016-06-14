@@ -1,13 +1,8 @@
 /* STYLES GENERAUX */
 html, body {
-	font-family: Consolas, monaco, monospace;
+	font-family: 'Droid serif', monaco, monospace;
 	background-color: #F1F1F1;
 	color: #F8F8F2;
-}
-
-body {
-	padding: 0 auto;
-	margin: 0 auto;
 }
 
 #wrapper {
@@ -16,13 +11,11 @@ body {
 	margin: 0 auto;
 }
 
-/*.container {
-	margin: 50px;
-}*/
-
 a {
 	text-decoration: none;
+	font-family: 'Montserrat';
 	color: #FFF;
+	font-size: 16px;
 }
 
 a:hover {
@@ -38,29 +31,32 @@ h2 {
 }
 
 /*--- HEADER ---*/
-/*Nom du site*/
-.navbar-header {
-	margin-top: 8px;
+header {
+	padding: 20px;
 }
 
-.navbar-header h2 a, .panel-footer li a {
+.navbar-header h2 a, footer li a {
 	text-decoration: none;
 }
 
-.navbar-header h2 a:hover, .panel-footer li a:hover {
+.navbar-header h2 a:hover, footer li a:hover {
 	color: #4A90E2;
 }
 
+.navbar-brand {
+	font-size: 30px;
+}
+
 /*--- HEADER ET FOOTER : STYLES COMMUNS ---*/
-.page-header, .panel-footer {
+header, footer {
 	background: #C10000;
 }
 
-.navbar-header h2 a, .panel-footer li a {
+.navbar-header h2 a, .liens li a {
 	text-decoration: none;
 }
 
-.navbar-header h2 a:hover, .panel-footer li a:hover {
+.navbar-header h2 a:hover, footer li a:hover {
 	color: #4A90E2;
 }
 
@@ -69,7 +65,10 @@ h2 {
 }
 
 /*--- FOOTER ---*/
-.panel-footer li {
+footer {
+	padding: 50px;
+}
+footer li {
 	list-style: none;
 }
 
