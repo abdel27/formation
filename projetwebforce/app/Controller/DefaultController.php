@@ -245,17 +245,61 @@ public function manageuser() {
 }
 
 
-public function edituser() {
+public function edituser($id) {
    
   $model = new UserModel();
-  $user = $model->find();
+  $user = $model->find($id);
   $this->show('default/edituser' , ['id' => $id]);
   
+  
 }
-      
+
+
+
+public function deleteuser($id) {
+
+  $model = new UserModel();
+  $user = $model->delete($id);
+  $this->show('default/deleteuser' , ['id' => $id]);  
+}
+
+
+
+public function passwordmodif() {
+  
+  $this->show('default/passwordmodif'); 
+}
+
+
+public function passwormodifaction() {
+
+  if(!empty($_POST['submit'])) {
+
+    $password1  = trim(strip_tags($_POST['newpassword']));
+    $password2  = trim(strip_tags($_POST['newpassword2']));
+    $validation = new Validation();
+    $token = $validation->generateRandomString(50);
+    $error['password'] = $validation->testPassword($password1,$password2,8);
+
+    if ($validation->isValide($error)){
+      $AuthentificationModel = new AuthentificationModel();
+      $passhach = $AuthentificationModel->hashPassword($password1);
+
+      $model = new UserModel();
     
 
 
 
 
+
+    }
+  }
 }
+
+}
+
+
+
+
+
+

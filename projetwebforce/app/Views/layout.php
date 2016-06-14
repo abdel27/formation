@@ -21,9 +21,26 @@
 	<!-- Fonts -->
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Droid+Serif:400,700' rel='stylesheet' type='text/css'>
 </head>
+<<<<<<< HEAD
+<body>
+	<div class="container">
+		<header>
+			<h1>W :: <?= $this->e($title) ?></h1>
+			
+			
+=======
+>>>>>>> 9f254428311202bf935635cd6860546d17026d84
 
 <body>
 
+<<<<<<< HEAD
+			<a href="<?php echo $this->url("dashboard");
+			?>">dashboard</a>
+			<a href="<?php echo $this->url("register");
+			?>">S'inscrire</a>
+			<a href="<?php echo $this->url("login");
+			?>">Se conncter</a>
+=======
 <div id="wrapper">	
 	<div class="container">
 		<div class="page-header">
@@ -32,6 +49,7 @@
 			    <div class="navbar-header">
 			     	<h2><a href="#">Animals</a></h2> 
 			    </div>
+>>>>>>> 9f254428311202bf935635cd6860546d17026d84
 
 			    <ul class="nav navbar-nav navbar-right">
 			      <li><a href="#">Consulter les offres</a></li>

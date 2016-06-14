@@ -36,5 +36,43 @@ private $city;
 private $error;
 
 
+//Fonction pour recuperer le mail et le token
+
+public function findEmailToken() {
+
+  $sql = "SELECT email, token FROM user WHERE email = :email";
+
+          $stmt = $dbh->prepare($sql);
+          $stmt->bindValue(':email',$email, PDO::PARAM_STR);
+          $stmt->execute();
+          $user = $stmt->fetch();
+          return $user;
 
 }
+
+//Fonction qui comptabilise le nombre d'utilisateur inscrit
+
+public function countUser() {
+
+  $sql = "SELECT COUNT() FROM user";
+          $stmt = $dbh->prepare($sql);
+          $stmt->execute();
+          $count = $stmt->fetch();
+          return $count; 
+}
+
+//Fontion qui comptabilise le nombre d'utilisateur bloqué
+
+public function banUser() {
+
+  $sql = "SELECT COUNT() FROM user WHERE active = 'no'";
+          $stmt = $dbh->prepare($sql);
+          $stmt->execute();
+          $count = $stmt->fetch();
+          return $count;
+}
+
+}
+
+
+

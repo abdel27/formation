@@ -1,7 +1,8 @@
 <?php
 	
 	$w_routes = array(
-		['GET', '/', 'Default#home', 'default_home'],
+
+	['GET', '/', 'Default#home', 'default_home'],
 
 
 
@@ -25,8 +26,17 @@
     ['GET','/forget','Default#forget', 'forget'],
     ['POST','/forget','Default#forgetaction', 'forgetaction'],
 
+    ['GET','/passwordmodif','Default#passwordmodif', 'passwordmodif'],
+    ['POST','/passwordmodif','Default#passwordmodifaction', 'passwordmodifaction'],
+
+
+
     ['GET','/manageuser','Default#manageuser', 'manageuser'],
-    ['GET','/edituser','Default#edituser', 'edituser'],
+    ['GET','/edituser/[:id]','Default#edituser', 'edituser'],
+    ['GET','/deleteuser/[:id]','Default#deleteuser', 'deleteuser'],
+
+    ['GET','/lienspassword','Default#lienspassword', 'lienspassword'],
+    ['POST','/lienspassword','Default#lienspassword', 'lienspassword'],
     
     ['GET','/logout','Default#logout', 'logout'],
     
