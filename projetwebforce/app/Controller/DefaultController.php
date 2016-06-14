@@ -25,17 +25,23 @@ class DefaultController extends Controller
 	 {
 
     $flashBag = new FlashBags();
-    
+
     $flashBag->setFlash('info', "Test de message");
-      
+
 		$this->show('default/home');
 	 }
 
-  
+
   public function login()
     {
     $this->show('default/login');
     }
+
+
+	public function detail()
+		{
+		$this->show('default/detail');
+		}
 
 
     public function register()
@@ -73,23 +79,23 @@ class DefaultController extends Controller
 
           //$user = new UsersModel();
           // $poste = $user->find();
-        
+
 
            if(!empty($user)) {
-        
+
              $AuthentificationModel->logUserIn($user);
           //   $AuthentificationModel->getLoggedUser();
           //   //$AuthentificationModel->refreshUser();
 
              $this->redirectToRoute('dashboard');
           }
-          
-  
+
+
         } else {
             // show formulaire de connexion avec les error
-             $this->show('default/login' , array('error' => $error)); 
+             $this->show('default/login' , array('error' => $error));
         }
-    
+
       }
     }
 
@@ -146,20 +152,20 @@ class DefaultController extends Controller
                          'role' => 'user'  ,
                          'active' => 'no' ,
                          'last_connection' => date('Y-m-d'));
-                         
+
           print_r($data);
-          
+
           //$model = new UsersModel();
           $model->insert($data);
 
-                // redirection vers le listing admin des articles 
+                // redirection vers le listing admin des articles
                 $this->redirectToRoute('login');
-       
+
             } else {
                 // show formulaire avec les error
                 $this->show('default/register' , array('error' => $error));
             }
-      }  
+      }
   }
 }
 
@@ -167,7 +173,7 @@ public function newannonce()
   {
 
     $this->show('default/newannonce');
-    
+
   }
 
 
@@ -176,7 +182,7 @@ public function newannonceaction()
   {
 
       if ( !empty($_POST['submitnewpost']) ) {
-        
+
       $nom = trim(strip_tags($_POST['nom']));
       $espece = trim(strip_tags($_POST['espece']));
       $race = trim(strip_tags($_POST['race']));
@@ -187,7 +193,7 @@ public function newannonceaction()
       $description = trim(strip_tags($_POST['description']));
 
       $validation = new Validation();
-    
+
       $error['nom']  = $validation->checkValidation($nom,'nom',3,40);
       $error['espece']  = $validation->checkValidation($espece,'espece',3,40);
       $error['race']  = $validation->checkValidation($race,'race',3,40);
@@ -196,8 +202,8 @@ public function newannonceaction()
       $error['lof']  = $validation->checkValidation($lof,'lof',3,40);
       $error['qualite']  = $validation->checkValidation($qualite,'qualite',3,40);
       $error['description']   = $validation->checkValidation($description,'description',3,220);
-      
-     
+
+
          if ($validation->isValide($error)){
            $tool = New Tool();
            $slug = $tool->slugify($title);
@@ -212,12 +218,12 @@ public function newannonceaction()
                          'active' => 'yes');
 
             print_r($data);
-            // insertion  
+            // insertion
             $model = new AnnonceModel();
             $model->insert($data);
 
-                // redirection vers le listing admin des articles 
-                $this->dashboard();       
+                // redirection vers le listing admin des articles
+                $this->dashboard();
             } else {
                 // show formulaire avec les error
                 $this->show('default/newannonce' , array('error' => $error));
@@ -266,12 +272,12 @@ public function manageuser() {
 
 
 public function edituser($id) {
-   
+
   $model = new UserModel();
   $user = $model->find($id);
   $this->show('default/edituser' , ['id' => $id]);
-  
-  
+
+
 }
 
 
@@ -280,14 +286,14 @@ public function deleteuser($id) {
 
   $model = new UserModel();
   $user = $model->delete($id);
-  $this->show('default/deleteuser' , ['id' => $id]);  
+  $this->show('default/deleteuser' , ['id' => $id]);
 }
 
 
 
 public function passwordmodif() {
-  
-  $this->show('default/passwordmodif'); 
+
+  $this->show('default/passwordmodif');
 }
 
 
@@ -306,7 +312,7 @@ public function passwormodifaction() {
       $passhach = $AuthentificationModel->hashPassword($password1);
 
       $model = new UserModel();
-    
+
 
 
 
@@ -317,9 +323,3 @@ public function passwormodifaction() {
 }
 
 }
-
-
-
-
-
-

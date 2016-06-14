@@ -4,10 +4,8 @@
 
 
 
-<<<<<<< HEAD
-<h2>Modifier un utilisateur</h2>  
-=======
-<h4>Modifier un utilisateur</h4>  
+<h2>Modifier un utilisateur</h2>
+
 
  <form action="<?php echo $this->url('edituser'); ?>" method="POST" id="formulaire">
 
@@ -31,7 +29,7 @@
           <span class="error"><?php if(!empty($error['prenom'])) { echo $error['prenom']; } ?></span>
           <input type="text" name="prenom" id="prenom" class="form-control" value="<?php if(!empty($_POST['prenom'])) { echo $_POST['prenom']; } ?>" />
         </div>
-      
+
 
         <div class="form-group">
           <label for="pseudo">PSEUDO</label>
@@ -128,10 +126,9 @@
           <span class="error"><?php if(!empty($error['tel'])) { echo $error['tel']; } ?></span>
           <input type="text" name="tel" id="tel" class="form-control" value="<?php if(!empty($_POST['tel'])) { echo $_POST['tel']; } ?>" />
         </div>
-     
+
         <input type="submit" name="submit" class="btn btn-primary" value="Modifier" />
-        
+
     </form>
 
     <?php $this->stop('main_content') ?>
->>>>>>> origin/master

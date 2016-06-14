@@ -1,5 +1,5 @@
 <?php
-	
+
 	$w_routes = array(
 
 	['GET', '/', 'Default#home', 'default_home'],
@@ -12,8 +12,6 @@
     ['GET','/newannonce','Default#newannonce', 'newannonce'],
     ['POST','/newannonce','Default#newannonceaction', 'newannonceaction'],
 
-    
-    
 
 
     ['GET','/login','Default#login', 'login'],
@@ -37,8 +35,5 @@
 
     ['GET','/lienspassword','Default#lienspassword', 'lienspassword'],
     ['POST','/lienspassword','Default#lienspassword', 'lienspassword'],
-    
     ['GET','/logout','Default#logout', 'logout'],
-    
 
-	);

@@ -16,13 +16,10 @@
             <li><a href="<?php echo $this->url("login");?>">Connexion</a></li>
             <li><a href="<?php echo $this->url("register");?>">S'inscrire</a></li>
             <li><a href="<?php echo $this->url("logout");?>">Deconnexion</a></li>
-<<<<<<< HEAD
             <li><a href="<?php echo $this->url("default_home");?>">Retour au site normal</a></li>
-=======
             <li><a href="<?php echo $this->url("manageuser");?>">Gestion des utilisateurs</a></li>
-            
-            
->>>>>>> origin/master
+
+          
           </ul>
 
           <h1><a class="mainTitle" href="<?php echo $this->url("dashboard");?>">Dashboard Animals</a></h1>

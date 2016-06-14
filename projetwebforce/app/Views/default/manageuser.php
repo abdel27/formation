@@ -50,14 +50,10 @@
             <td><?php echo $post['codepostal']; ?></td>
             <td><?php echo $post['tel']; ?></td>
             <td><?php echo $post['city']; ?></td>
-<<<<<<< HEAD
-            <td><a class="boutonModifer" href="">Modifier</a></td>
-            <td><a class="boutonSupprimer" href="">Supprimer</a></td>
-=======
-            <td><a href="<?php $id=$post['id']; echo $this->url("edituser", ["id" => $id]);
+            <td><a class="boutonModifer" href="<?php $id=$post['id']; echo $this->url("edituser", ["id" => $id]);
             ?>">Modifier</a></td>
-            <td><a href="">Supprimer</a></td>
->>>>>>> origin/master
+            <td><a class="boutonSupprimer" href="<?php $id=$post['id']; echo $this->url("manageuser", ["id" => $id]);
+            ?>">Supprimer</a></td>
          </tr>
       <?php } ?>
     </tbody>
