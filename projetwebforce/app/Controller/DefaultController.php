@@ -172,6 +172,7 @@ public function newannonce()
 
 
 public function newannonceaction()
+
   {
 
       if ( !empty($_POST['submitnewpost']) ) {
@@ -210,10 +211,10 @@ public function newannonceaction()
                          'description' =>$description,
                          'active' => 'yes');
 
-          print_r($data);
-          // insertion  
-          $model = new AnnonceModel();
-          $model->insert($data);
+            print_r($data);
+            // insertion  
+            $model = new AnnonceModel();
+            $model->insert($data);
 
                 // redirection vers le listing admin des articles 
                 $this->dashboard();       
@@ -231,10 +232,29 @@ public function forget() {
 
 $this->show('default/forget');
 
+}
 
 
+public function forgetaction() {
+
+  if(!empty($_POST['submit'])) {
+
+    $validation = new Validation();
+    $error['email']   = $validation->validateMail($email,80);
+    if ($validation->isValide($error)){
+    $model = new UserModel();
+    $user = $model->findMailToken();
+    $this->show('default/lienspassword', array('user' =>$users));
+
+    }
+  }
 
 }
+
+
+
+
+
 
 public function manageuser() {
     $all = new UserModel();
