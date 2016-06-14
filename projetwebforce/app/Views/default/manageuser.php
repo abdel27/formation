@@ -1,39 +1,37 @@
-<?php $this->layout('layoutback', ['title' => 'Dashboard']) ?>
+<?php $this->layout('layoutback', ['title' => 'Dashboard utilisateurs']) ?>
 
 <?php $this->start('main_content') ?>
-<h4>Gestion utilisateur</h4>  
+<h4>Gestion utilisateur</h4>
 <table class="table">
     <thead>
       <tr>
 
         <th>Identifiant</th>
         <th>Nom</th>
-        <th>Prenom</th>
+        <th>Prénom</th>
         <th>Pseudo</th>
         <th>Date de naissance</th>
         <th>Email</th>
         <th>Password</th>
         <th>Token</th>
         <th>IP</th>
-        <th>Date de creation</th>
+        <th>Date de création</th>
         <th>Departement</th>
         <th>Role</th>
         <th>Active</th>
-        <th>Derniere conncetion</th>
+        <th>Derniere connection</th>
         <th>Situation</th>
         <th>Adresse</th>
         <th>Code postal</th>
         <th>Telephone</th>
         <th>Ville</th>
 
-        
-
       </tr>
     </thead>
     <tbody>
       <?php foreach ($users as $post) { ?>
         <tr>
-            <td><a><?php echo $post['id']; ?></a></td>    
+            <td><a><?php echo $post['id']; ?></a></td>
             <td><?php echo $post['nom']; ?></td>
             <td><?php echo $post['prenom'];?></td>
             <td><?php echo $post['username']; ?></td>
@@ -52,8 +50,8 @@
             <td><?php echo $post['codepostal']; ?></td>
             <td><?php echo $post['tel']; ?></td>
             <td><?php echo $post['city']; ?></td>
-            <td><a href="">Modifier</a></td>
-            <td><a href="">Supprimer</a></td>
+            <td><a class="boutonModifer" href="">Modifier</a></td>
+            <td><a class="boutonSupprimer" href="">Supprimer</a></td>
          </tr>
       <?php } ?>
     </tbody>

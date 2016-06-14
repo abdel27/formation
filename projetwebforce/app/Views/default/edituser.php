@@ -4,5 +4,4 @@
 
 
 
-<h4>Modifier un utilisateur</h4>  
-
+<h2>Modifier un utilisateur</h2>  
