@@ -1,16 +1,28 @@
+/* STYLES GENERAUX */
 html, body {
 	font-family: Consolas, monaco, monospace;
-	background-color: #272822;
+	background-color: #F1F1F1;
 	color: #F8F8F2;
 }
 
-.container {
-	margin: 50px;
+body {
+	padding: 0 auto;
+	margin: 0 auto;
 }
+
+#wrapper {
+	max-width: 1200px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+/*.container {
+	margin: 50px;
+}*/
 
 a {
 	text-decoration: none;
-	color: #A6E22E;
+	color: #FFF;
 }
 
 a:hover {
@@ -22,5 +34,50 @@ h1 {
 }
 
 h2 {
-	color: #66D9EF;
+	color: #FFF;
 }
+
+/*--- HEADER ---*/
+/*Nom du site*/
+.navbar-header {
+	margin-top: 8px;
+}
+
+.navbar-header h2 a, .panel-footer li a {
+	text-decoration: none;
+}
+
+.navbar-header h2 a:hover, .panel-footer li a:hover {
+	color: #4A90E2;
+}
+
+/*--- HEADER ET FOOTER : STYLES COMMUNS ---*/
+.page-header, .panel-footer {
+	background: #C10000;
+}
+
+.navbar-header h2 a, .panel-footer li a {
+	text-decoration: none;
+}
+
+.navbar-header h2 a:hover, .panel-footer li a:hover {
+	color: #4A90E2;
+}
+
+.nav {
+	margin-top: 20px;
+}
+
+/*--- FOOTER ---*/
+.panel-footer li {
+	list-style: none;
+}
+
+.contact a {
+	text-decoration: none;
+}
+
+.contact a:hover {
+	color: #4A90E2;
+}
+

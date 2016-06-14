@@ -20,11 +20,11 @@ td, th
 }*/
 
 
-#wrapper {
+/*#wrapper {
   width:100%;
   max-width: 1000px;
   margin: 0 auto;
-}
+}*/
 .error {color:red;font-size: .8em;}
 
 
