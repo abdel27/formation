@@ -46,6 +46,4 @@
   ['GET','/edituser/[:id]','Default#edituser', 'edituser'],
   ['GET','/deleteuser/[:id]','Default#deleteuser', 'deleteuser'],
 
-
-   
 	);

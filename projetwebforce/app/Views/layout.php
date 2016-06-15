@@ -17,121 +17,53 @@
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
-	<!-- Liens vers la font Montserrat -->
-	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-	<link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700' rel='stylesheet' type='text/css'>
-
 	<!-- Lien vers la feuille de styles CSS -->
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/style.css') ?>">
-<<<<<<< HEAD
 
 	<!-- Fonts -->
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Droid+Serif:400,700' rel='stylesheet' type='text/css'>
 </head>
 
-
 <body>
 
-
-<div id="wrapper">
-	<div class="container">
-		<div class="page-header">
-			<nav class="navbar">
-			  <div class="container-fluid">
-			    <div class="navbar-header">
-			     	<h2><a href="#">Animals</a></h2>
-=======
-</head>
-
-<body>
 
 <!-- HEADER -->
 <header>
-	<nav class="navbar">
-			<div class="container-fluid">
-			    <div class="navbar-header">
-			     	<h2><a class="navbar-brand" href="#">Animals</a></h2> 
->>>>>>> origin/master
-			    </div>
+	<nav class="titreHeader">
+		<h2><a href="#">Animals</a></h2>
 
-			    <ul class="nav navbar-nav navbar-right">
-			      <li><a href="#">Consulter les offres</a></li>
-			      <li><a href="#">Ajouter des offres</a></li>
-			      <li><a href="<?php echo $this->url("register");?>"> S'inscrire</a></li>
-			      <li><a href="<?php echo $this->url("register");?>"> Se connecter</a></li>
-			    </ul>
-<<<<<<< HEAD
-			  </div>
-			</nav>
-		</div>
-
-=======
-			</div>
-		</nav>
+		<ul class="menuHeader">
+		  <li><a href="<?= $this->url("register");?>">Consulter les offres</a></li>
+		  <li><a href="<?= $this->url("register");?>">Ajouter des offres</a></li>
+		  <li><a href="<?= $this->url("register");?>"> S'inscrire</a></li>
+		  <li><a href="<?= $this->url("register");?>"> Se connecter</a></li>
+		</ul>
+	</nav>
 </header>
->>>>>>> origin/master
+
 
 <!-- WRAPPER ET CONTENT -->
-<div id="wrapper">
+<div class="mainContainer">
 		<section>
 			<?= $this->section('main_content') ?>
-			qooegoiergpoierbgpieoaroarnhbpoinoia
 		</section>
 </div>
 
-<<<<<<< HEAD
 
-		<div class="panel-footer">
-			<div class="container-fluid">
-				<div class="row">
-					<!-- <div class="col-md-4"> -->
-						<ul>
-							<li><a href="#">Consulter les offres</a></li>
-							<li><a href="#">Ajouter des offres</a></li>
-							<li><a href="<?php echo $this->url("register");?>"> Se connecter</a></li>
-						</ul>
-					<!-- </div> -->
-				</div>
-=======
-<!-- FOOTER -->			
+<!-- FOOTER -->
 <footer>
-	<div class="container-fluid">
-		<div class="row liens">
-			<!-- <div class="col-lg-4"> -->
-				<ul>
-					<li><a href="#">Consulter les offres</a></li>
-						<li><a href="#">Ajouter des offres</a></li>
-						<li><a href="<?php echo $this->url("register");?>"> Se connecter</a></li>
-					</ul>
-			<!-- </div> -->
-		</div>	
->>>>>>> origin/master
+	<nav>
+		<ul>
+			<li><a href="<?= $this->url("register");?>">Consulter les offres</a></li>
+			<li><a href="<?= $this->url("register");?>">Ajouter des offres</a></li>
+			<li><a href="<?= $this->url("register");?>"> Se connecter</a></li>
+		</ul>
 
-		<div class="row animals">
-			<!-- <div class="col-lg-4"> -->
-				<h2>Animals</h2>
-			<!-- </div> -->
-		</div>
+		<h2>Animals</h2>
 
-		<div class="row contact">
-			<!-- <div class="col-lg-4"> --> 
-				<a href="#">Nous contacter</a>
-			<!-- </div> -->
-		</div>
-	</div> 	
+		<a href="#">Nous contacter</a>
+	</nav>
 </footer>
 
-<<<<<<< HEAD
-				<div class="row contact">
-					<!-- <div class="col-md-4"> -->
-						<a href="#">Nous contacter</a>
-					<!-- </div> -->
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-=======
->>>>>>> origin/master
 </body>
 </html>

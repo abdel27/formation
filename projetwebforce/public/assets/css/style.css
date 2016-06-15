@@ -1,82 +1,250 @@
 /* STYLES GENERAUX */
 html, body {
-	font-family: 'Droid serif', monaco, monospace;
+	box-sizing: border-box;
+	margin: 0 auto;
 	background-color: #F1F1F1;
-	color: #F8F8F2;
 }
 
-#wrapper {
-	max-width: 1200px;
-	width: 100%;
-	margin: 0 auto;
+
+
+/* Textes, listes, liens */
+
+h1, h2, h3, h4{
+	font-family: 'Montserrat', helvetica, sans-serif;
+	margin: 0;
+	font-weight: 700;
+	color: #272F32;
 }
+
+p{
+	font-family: 'Droid Serif', serif;
+	color: #272F32;
+}
+
+ul{ margin: 0; padding: 0;}
+
+li{ list-style-type: none; }
 
 a {
 	text-decoration: none;
-	font-family: 'Montserrat';
-	color: #FFF;
-	font-size: 16px;
+	font-family: 'Montserrat', helvetica, sans-serif;
+	font-weight: 400;
+	color: white;
+
+	transition: .3s;
 }
 
-a:hover {
-	color: #F92672;
+a:hover{ text-decoration: none; color: white; }
+
+
+
+
+/* Boutons */
+
+/* Bouton de validation */
+.bouton, button{
+	font-family: 'Montserrat', helvetica, sans-serif;
+	color: white;
+	padding: 10px 40px;
+	border: none;
+	border-radius: 4px;
+
+	transition: .3s;
 }
 
-h1 {
-	color: #F92672;
+.bouton, .boutonVert {
+	background: #7ED321;
+	border: 2px solid #B8E986;
 }
 
-h2 {
-	color: #FFF;
+/* Survol bouton validation */
+.bouton:hover, .boutonValider:hover{
+	background: #6BC20C;
 }
 
-/*--- HEADER ---*/
-header {
+
+
+/* Blocs principaux */
+
+.mainContainer{
+	display: flex;
+	justify-content: center;
+
+	width: 100%;
+	padding: 0 20px;
+}
+
+.mainWrapper {
+	max-width: 1140px;
+	width: 100%;
+	margin: 0 auto;
+	background: white;
+	padding: 20px;
+	margin: 0 auto;
+
+	box-shadow: 0px 4px 3px 0px rgba(0,0,0,0.20);
+}
+
+.contentAnnonce{
+	display: flex;
+}
+
+.imageAnnonce{
+	display: flex;
+	flex-grow: 6;
+
+	margin-right: 20px;
+}
+
+
+
+/* Blocs texte */
+
+/* Annonce unique */
+.descriptionAnnonce{
+	display: flex;
+	flex-grow: 4;
+
+	width: 40%;
+}
+
+/* bloc titre centré */
+.titreCentre{
+	display: block;
+	text-align: center;
+	width: 100%;
+	margin: 20px 0 40px 0;
+}
+
+/* Titre annonce */
+.titreCentre h2{
+	font-weight: 700;
+}
+/* Sous titre annonce*/
+.titreCentre p{
+	width: 80%;
+	margin: 0 auto;
+}
+
+/* Texte gras annonce */
+.boldAnnonce{
+	flex-grow: 1;
+
+	margin-right: 20px;
+}
+
+.txtBold{
+	font-weight: 700;
+}
+
+/* Texte light annonce */
+.LightAnnonce{
+	flex-grow: 2;
+}
+
+
+
+/* Annonces de la page principale */
+
+.homeWrapper{
+	display: flex;
+	flex-wrap: wrap;
+	max-width: 1140px;
+	margin: 0 auto;
+}
+
+.annonceHome{
+	background: white;
+	border-radius: 4px;
+	max-width: 31.33%;
+	margin: 20px 1%;
+
+	box-shadow: 0px 4px 3px 0px rgba(0,0,0,0.20);
+}
+
+.annonceHome img{
+	width: 100%;
+}
+
+.texteAnnonceHome{
+	padding: 5%;
+}
+
+.texteAnnonceHome h3{
+	padding-bottom: 5%;
+}
+
+
+
+/* Barre de recherche page d'accueil */
+
+.rechercheHome{
+	background: white;
+	max-width: 1140px;
+	width: 100%;
+	margin: 0 auto;
 	padding: 20px;
 }
 
-.navbar-header h2 a, footer li a {
-	text-decoration: none;
+.labelRecherche label, .inputRecherche input{
+	padding: 5px;
+	border-radius: 4px;
 }
 
-.navbar-header h2 a:hover, footer li a:hover {
-	color: #4A90E2;
+.labelRecherche label{
+	width: 19.5%;
+	margin: 0 auto;
 }
 
-.navbar-brand {
-	font-size: 30px;
+.inputRecherche .input{
+	width: 19.5%;
+	margin: 0 auto;
+	border: 1px solid lightgrey;
 }
+
+
+
+/*--- HEADER ---*/
+
+header {
+	padding: 20px;
+	margin-bottom: 40px;
+}
+
+nav{
+	display: flex;
+	justify-content: space-between;
+	max-width: 1140px;
+	margin: 0 auto;
+	align-items: center;
+}
+
+.menuHeader{
+	display: flex;
+}
+
+.menuHeader a{
+	padding: 10px 20px;
+	border-radius: 4px;
+}
+
+.menuHeader a:hover{
+	background: #E00000;
+}
+
+
 
 /*--- HEADER ET FOOTER : STYLES COMMUNS ---*/
+
 header, footer {
 	background: #C10000;
 }
 
-.navbar-header h2 a, .liens li a {
-	text-decoration: none;
-}
 
-.navbar-header h2 a:hover, footer li a:hover {
-	color: #4A90E2;
-}
-
-.nav {
-	margin-top: 20px;
-}
 
 /*--- FOOTER ---*/
+
 footer {
-	padding: 50px;
+	margin: 40px 0 0 0;
+	padding: 20px;
 }
-footer li {
-	list-style: none;
-}
-
-.contact a {
-	text-decoration: none;
-}
-
-.contact a:hover {
-	color: #4A90E2;
-}
-
