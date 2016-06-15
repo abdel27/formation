@@ -46,13 +46,6 @@
   ['GET','/edituser/[:id]','Default#edituser', 'edituser'],
   ['GET','/deleteuser/[:id]','Default#deleteuser', 'deleteuser'],
 
-<<<<<<< HEAD
-=======
-    ['GET','/lienspassword','Default#lienspassword', 'lienspassword'],
-    ['POST','/lienspassword','Default#lienspasswordaction', 'lienspasswordaction'],
-    
-    ['GET','/logout','Default#logout', 'logout'],
-    
->>>>>>> origin/master
 
+   
 	);
