@@ -138,7 +138,7 @@ class DefaultController extends Controller
         //Instance de la class Departement
         $all = new DepartementModel();
         $departements = $all->findAll();
-        debug($departements);
+        //debug($departements);
         
         $this->show('default/edituser' , array(
             'departements' => $departements,
@@ -335,6 +335,29 @@ class DefaultController extends Controller
         $logout = new AuthentificationModel();
         $logout->logUserOut() ;
         $this->redirectToRoute('login');
+    }
+
+
+    public function edituseraction() {
+
+        if(!empty($_POST['submit'])) {
+
+        // protection XSS
+ 
+        $nom =              trim(strip_tags($_POST['nom']));
+        $prenom =           trim(strip_tags($_POST['prenom']));
+        $username =         trim(strip_tags($_POST['username']));
+        $departement =      trim(strip_tags($_POST['departement']));
+        $email  =           trim(strip_tags($_POST['email']));
+        $date_naissance  =  trim(strip_tags($_POST['date_naissance']));
+        $role =             trim(strip_tags($_POST['role']));
+        $active =         trim(strip_tags($_POST['active']));
+        $situation =        trim(strip_tags($_POST['situation']));
+        $adresse =          trim(strip_tags($_POST['adresse']));
+        $codepostal =       trim(strip_tags($_POST['code_postal']));
+        $tel =              trim(strip_tags($_POST['tel']));
+        $city =             trim(strip_tags($_POST['city']));
+
     }
 
 

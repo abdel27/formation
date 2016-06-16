@@ -33,26 +33,7 @@
 
 <!-- HEADER -->
 <header>
-<<<<<<< HEAD
-=======
-	<nav class="titreHeader">
 
-		<h2><a href="<?php echo $this->url("default_home");?>">Animals</a></h2>
-
-		<ul class="menuHeader">
-		<li><a href="<?= $this->url("profiluser");?>"> Mon profil</a></li>
-		  <li><a href="<?= $this->url("default_home");?>">Consulter les offres</a></li>
-		  <li><a href="<?= $this->url("register");?>">Ajouter des offres</a></li>
-		  <li><a href="<?= $this->url("register");?>"> Se déconnecter</a></li>
-		  <li><a href="<?= $this->url("register");?>"> S'inscrire</a></li>
-
-
-
-		</ul>
-	</nav>
-</header>
-
->>>>>>> origin/master
 
  <div class="container-fluid">
 	 <!-- Brand and toggle get grouped for better mobile display -->
@@ -62,6 +43,7 @@
 
 	 <!-- Collect the nav links, forms, and other content for toggling -->
 		 <ul class="nav navbar-nav navbar-right" style="text-align: center">
+		 	<li><a href="<?= $this->url("profiluser");?>"> Mon profil</a></li>
 			 <li><a href="<?= $this->url("default_home");?>">Consulter les offres</a></li>
 			<li><a href="<?= $this->url("newannonce");?>">Ajouter des offres</a></li>
 			<li><a href="<?= $this->url("register");?>"> S'inscrire</a></li>
@@ -82,30 +64,14 @@
 <!-- FOOTER -->
 <footer>
 	<nav>
-<<<<<<< HEAD
+
 		<ul class="nav navbar-nav navbar-right" style="text-align: center">
 			<li><a href="<?= $this->url("default_home");?>">Consulter les offres</a></li>
 		 <li><a href="<?= $this->url("newannonce");?>">Ajouter des offres</a></li>
 		 <li><a href="<?= $this->url("register");?>"> S'inscrire</a></li>
 		 <li><a href="<?= $this->url("login");?>"> Se connecter</a></li>
 		</ul>
-		<!-- <ul>
-			<li><a href="<?= $this->url("register");?>">Consulter les offres</a></li>
-			<li><a href="<?= $this->url("register");?>">Ajouter des offres</a></li>
-			<li><a href="<?= $this->url("register");?>"> Se connecter</a></li>
-		</ul> -->
-=======
-		<ul>
-
-			<li><a href="<?= $this->url("profiluser");?>"> Mon profil</a></li>
-			<li><a href="<?= $this->url("register");?>">Consulter les offres</a></li>
-			<li><a href="<?= $this->url("register");?>">Ajouter des offres</a></li>
-			<li><a href="<?= $this->url("register");?>"> Se déconnecter</a></li>
-
-
-
-		</ul>
->>>>>>> origin/master
+		
 
 		<h2>Animals</h2>
 

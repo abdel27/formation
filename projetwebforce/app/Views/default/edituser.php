@@ -26,7 +26,7 @@
 
           <!--Affichage des message d'erreur si les cntraintes ne sont pas respectées-->
           <span class="error"><?php if(!empty($error['prenom'])) { echo $error['prenom']; } ?></span>
-          <input type="text" name="prenom" id="prenom" class="form-control" value="<?php if(!empty($user['prenom'])) { echo $_POST['prenom']; } ?>" />
+          <input type="text" name="prenom" id="prenom" class="form-control" value="<?php if(!empty($user['prenom'])) { echo $user['prenom']; } ?>" />
         </div>
       
 
@@ -35,7 +35,7 @@
 
           <!--Affichage des message d'erreur si les cntraintes ne sont pas respectées-->
           <span class="error"><?php if(!empty($error['username'])) { echo $error['username']; } ?></span>
-          <input type="text" name="username" id="username" class="form-control" value="<?php if(!empty($_POST['username'])) { echo $_POST['username']; } ?>" />
+          <input type="text" name="username" id="username" class="form-control" value="<?php if(!empty($user['username'])) { echo $user['username']; } ?>" />
         </div>
 
         <div class="form-group">
@@ -43,7 +43,7 @@
 
           <!--Affichage des message d'erreur si les cntraintes ne sont pas respectées-->
           <span class="error"><?php if(!empty($error['email'])) { echo $error['email']; } ?></span>
-          <input type="text" name="email" id="email" class="form-control" value="<?php if(!empty($_POST['email'])) { echo $_POST['email']; } ?>" />
+          <input type="text" name="email" id="email" class="form-control" value="<?php if(!empty($user['email'])) { echo $user['email']; } ?>" />
         </div>
 
         <div class="form-group">
@@ -66,7 +66,7 @@
 
             <!--Affichage des message d'erreur si les cntraintes ne sont pas respectées-->
             <span class="error"><?php if(!empty($error['password'])) { echo $error['password']; } ?></span>
-            <input type="password" name="password" id="password" class="form-control" value="<?php if(!empty($_POST['password'])) { echo $_POST['password']; } ?>" />
+            <input type="password" name="password" id="password" class="form-control" value="<?php if(!empty($user['password'])) { echo $user['password']; } ?>" />
         </div>
 
          <div class="form-group">
@@ -74,7 +74,7 @@
 
             <!--Affichage des message d'erreur si les contraintes ne sont pas respectées-->
             <span class="error"><?php if(!empty($error['naissance'])) { echo $error['naissance']; } ?></span>
-            <input type="text" name="naissance" id="naissance" class="form-control" value="<?php if(!empty($_POST['naissance'])) { echo $_POST['naissance']; } ?>" />
+            <input type="text" name="naissance" id="naissance" class="form-control" value="<?php if(!empty($user['naissance'])) { echo $user['naissance']; } ?>" />
         </div>
 
         <div class="form-group">
@@ -82,7 +82,7 @@
 
           <!--Affichage des message d'erreur si les cntraintes ne sont pas respectées-->
           <span class="error"><?php if(!empty($error['role'])) { echo $error['role']; } ?></span>
-          <input type="text" name="role" id="role" class="form-control" value="<?php if(!empty($_POST['role'])) { echo $_POST['role']; } ?>" />
+          <input type="text" name="role" id="role" class="form-control" value="<?php if(!empty($user['role'])) { echo $user['role']; } ?>" />
         </div>
 
         <div class="form-group">
@@ -90,7 +90,7 @@
 
           <!--Affichage des message d'erreur si les cntraintes ne sont pas respectées-->
           <span class="error"><?php if(!empty($error['active'])) { echo $error['active']; } ?></span>
-          <input type="text" name="active" id="active" class="form-control" value="<?php if(!empty($_POST['active'])) { echo $_POST['active']; } ?>" />
+          <input type="text" name="active" id="active" class="form-control" value="<?php if(!empty($user['active'])) { echo $user['active']; } ?>" />
         </div>
 
         <div class="form-group">
@@ -98,7 +98,7 @@
 
           <!--Affichage des message d'erreur si les cntraintes ne sont pas respectées-->
           <span class="error"><?php if(!empty($error['last'])) { echo $error['last']; } ?></span>
-          <input type="text" name="last" id="last" class="form-control" value="<?php if(!empty($_POST['last'])) { echo $_POST['last']; } ?>" />
+          <input type="text" name="last" id="last" class="form-control" value="<?php if(!empty($user['last'])) { echo $user['last']; } ?>" />
         </div>
 
         <div class="form-group">
@@ -106,7 +106,7 @@
 
           <!--Affichage des message d'erreur si les cntraintes ne sont pas respectées-->
           <span class="error"><?php if(!empty($error['adresse'])) { echo $error['adresse']; } ?></span>
-          <input type="text" name="adresse" id="adresse" class="form-control" value="<?php if(!empty($_POST['adresse'])) { echo $_POST['adresse']; } ?>" />
+          <input type="text" name="adresse" id="adresse" class="form-control" value="<?php if(!empty($user['adresse'])) { echo $user['adresse']; } ?>" />
         </div>
 
         <div class="form-group">
@@ -114,7 +114,7 @@
 
           <!--Affichage des message d'erreur si les cntraintes ne sont pas respectées-->
           <span class="error"><?php if(!empty($error['postal'])) { echo $error['postal']; } ?></span>
-          <input type="text" name="postal" id="postal" class="form-control" value="<?php if(!empty($_POST['postal'])) { echo $_POST['postal']; } ?>" />
+          <input type="text" name="postal" id="postal" class="form-control" value="<?php if(!empty($user['postal'])) { echo $user['postal']; } ?>" />
         </div>
 
         <div class="form-group">
@@ -122,7 +122,7 @@
 
           <!--Affichage des message d'erreur si les cntraintes ne sont pas respectées-->
           <span class="error"><?php if(!empty($error['ville'])) { echo $error['ville']; } ?></span>
-          <input type="text" name="ville" id="ville" class="form-control" value="<?php if(!empty($_POST['ville'])) { echo $_POST['ville']; } ?>" />
+          <input type="text" name="ville" id="ville" class="form-control" value="<?php if(!empty($user['ville'])) { echo $user['ville']; } ?>" />
         </div>
 
         <div class="form-group">
@@ -130,7 +130,7 @@
 
           <!--Affichage des message d'erreur si les cntraintes ne sont pas respectées-->
           <span class="error"><?php if(!empty($error['tel'])) { echo $error['tel']; } ?></span>
-          <input type="text" name="tel" id="tel" class="form-control" value="<?php if(!empty($_POST['tel'])) { echo $_POST['tel']; } ?>" />
+          <input type="text" name="tel" id="tel" class="form-control" value="<?php if(!empty($user['tel'])) { echo $user['tel']; } ?>" />
         </div>
      
         <input type="submit" name="submit" class="btn btn-primary" value="Modifier" />
