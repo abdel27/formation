@@ -26,7 +26,7 @@
       <label for="message">Message *</label><br>
       <textarea name="message"></textarea><br>
 
-      <input class="bouton" type="submit" name="name" value="Envoyer">
+      <input class="bouton boutonVert" type="submit" name="name" value="Envoyer">
     </form>
   </div>
 </section>

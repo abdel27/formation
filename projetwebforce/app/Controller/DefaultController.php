@@ -16,20 +16,20 @@ use \Model\DepartementModel;
 class DefaultController extends Controller
 {
 
-  
+
   //Page d'accueil par défaut
   public function home()
   {
 
         $flashBag = new FlashBags();
-    
+
          $flashBag->setFlash('info', "Test de message");
-      
+
     $this->show('default/home');
   }
 
-  
-  
+
+
 
     public function profiluser()
     {
@@ -45,10 +45,16 @@ class DefaultController extends Controller
     //Methode pour aller chercher tout les enregistrements de la table
     public function dashboard()
     {
-        //Insatnce de la class AnnonceModel
+        //Instance de la class AnnonceModel
         $all = new AnnonceModel();
-        $annonce = $all->findAll();
-        $this->show('default/dashboard' , array('annonce' => $annonce));
+        $annonces = $all->findAll();
+        $this->show('default/dashboard' , array('annonces' => $annonces));
+
+        // Instance de la classe UsersModel
+        $all = new UsersModel();
+        $users = $all->findAll();
+        $this->show('default/dashboard' , array('users' => $users));
+
     }
 
 
@@ -58,7 +64,7 @@ class DefaultController extends Controller
     {
 
         $this->show('default/newannonce');
-    
+
     }
 
 
@@ -88,7 +94,7 @@ class DefaultController extends Controller
         $error['lof']  = $validation->checkValidation($lof,'lof',3,40);
         $error['qualite']  = $validation->checkValidation($qualite,'qualite',3,40);
         $error['description']   = $validation->checkValidation($description,'description',3,220);
-      
+
             //Si pas d'erreur
             if ($validation->isValide($error)){
                 $tool = New Tool();
@@ -104,13 +110,13 @@ class DefaultController extends Controller
                          'active' => 'yes');
 
                 //print_r($data);
-                // insertion  
+                // insertion
                 //Insertion dans la base de donnee
                 $model = new AnnonceModel();
                 $model->insert($data);
 
-                // redirection vers le listing admin des articles 
-                $this->dashboard();       
+                // redirection vers le listing admin des articles
+                $this->dashboard();
             } else {
                 // show formulaire avec les error
                 $this->show('default/newannonce' , array('error' => $error));
@@ -137,9 +143,9 @@ class DefaultController extends Controller
         $departements = $all->findAll();
         //debug($departement);
         $this->show('default/edituser' , ['id' => $id], array('departement' => $departements));
-  
-  
-    } 
+
+
+    }
 
 
     //Methode qui permet de supprimer un membre
@@ -147,8 +153,25 @@ class DefaultController extends Controller
         //Instance de la class USerModel
         $model = new UserModel();
         $user = $model->delete($id);
-        $this->show('default/deleteuser' , ['id' => $id]);  
+        $this->show('default/deleteuser' , ['id' => $id]);
     }
+
+
+    //Methode qui recupere toutes les annonces
+     public function manageannonce() {
+        $all = new AnnonceModel();
+        $annonces = $all->findAll();
+        $this->show('default/manageannonce', array('annonces' =>$annonces));
+    }
+
+
+    //Methode qui recupere toutes les annonces
+     public function postannonce() {
+        $all = new AnnonceModel();
+        $annonces = $all->findAll();
+        $this->show('default/postannonce', array('annonces' =>$annonces));
+    }
+
 
     //Lien vers la page mot de passe oublié
     public function forget() {
@@ -183,8 +206,8 @@ class DefaultController extends Controller
 
     //Lien vers la page changement de mot de passe
     public function passwordmodif() {
-  
-        $this->show('default/passwordmodif'); 
+
+        $this->show('default/passwordmodif');
     }
 
     //Methode pour modifier le mot de passe
@@ -221,11 +244,11 @@ class DefaultController extends Controller
         //Instance de la class Departement
         $all = new DepartementModel();
         $departements = $all->findAll();
-    
+
         //Envoi les donnees a la vue
 
         $this->show('default/register' , array('departements' => $departements));
-       
+
     }
 
 
@@ -239,7 +262,7 @@ class DefaultController extends Controller
             $validation = new Validation();
             $error['username']  = $validation->checkValidation($username,'username',3,40);
             $error['password']  = $validation->checkValidation($password,'password',8,40);
-            
+
             //Si pas d'erreur
             if ($validation->isValide($error)){
 
@@ -250,19 +273,19 @@ class DefaultController extends Controller
 
                     //Methode pour se loggger
                     $AuthentificationModel->logUserIn($user);
-                    
+
                     //Si connexion OK redirection
                     $this->redirectToRoute('dashboard');
                 }
             } else {
                 // Sinon redirection vers formulaire de connexion avec les error
-                $this->show('default/login' , array('error' => $error)); 
+                $this->show('default/login' , array('error' => $error));
             }
         }
     }
 
 
-    //Methode d'inscription d'un membre, securite et validation des champs, insertion dans BDD 
+    //Methode d'inscription d'un membre, securite et validation des champs, insertion dans BDD
     public function registeraction() {
 
       if(!empty($_POST['submit'])) {
@@ -306,24 +329,24 @@ class DefaultController extends Controller
                          'role' => 'user'  ,
                          'active' => 'no' ,
                          'last_connection' => date('Y-m-d'));
-                         
+
                         //print_r($data);
-          
+
                         //Insertion en base de donnees
                         $model->insert($data);
-                        // redirection vers le listing admin des articles 
+                        // redirection vers le listing admin des articles
                         $this->redirectToRoute('login');
-       
+
                 } else {
                     // show formulaire avec les error
                     $this->show('default/register' , array('error' => $error));
                 }
-            }  
+            }
         }
     }
 
     //Methode de deconnexion du memnbre
-    public function logout() 
+    public function logout()
     {
         $logout = new AuthentificationModel();
         $logout->logUserOut() ;
@@ -331,12 +354,6 @@ class DefaultController extends Controller
     }
 
 
-    
+
 
 }
-
-
-
-
-
-

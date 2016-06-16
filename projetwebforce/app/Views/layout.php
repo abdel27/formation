@@ -32,44 +32,40 @@
 
 <!-- HEADER -->
 <header>
-	<nav class="titreHeader">
+ <div class="container-fluid">
+		 <div class="navbar-header">
+			 <a href="<?= $this->url("default_home");?>"><h1>Animals</h1></a>
+		 </div>
 
-		<h2><a href="<?php echo $this->url("default_home");?>">Animals</a></h2>
+		 <!-- Collect the nav links, forms, and other content for toggling -->
+			 <ul class="nav navbar-nav navbar-right">
+				<li><a href="<?= $this->url("default_home");?>">Consulter les offres</a></li>
+				<li><a href="<?= $this->url("newannonce");?>">Ajouter des offres</a></li>
+				<li><a href="<?= $this->url("register");?>"> S'inscrire</a></li>
+				<li><a href="<?= $this->url("login");?>"> Se connecter</a></li>
+			 </ul>
 
-		<ul class="menuHeader">
-		<li><a href="<?= $this->url("profiluser");?>"> Mon profil</a></li>
-		  <li><a href="<?= $this->url("register");?>">Consulter les offres</a></li>
-		  <li><a href="<?= $this->url("register");?>">Ajouter des offres</a></li>
-		  <li><a href="<?= $this->url("register");?>"> Se déconnecter</a></li>
-		  <li><a href="<?= $this->url("register");?>"> S'inscrire</a></li>
-
-		
-		
-		</ul>
-	</nav>
+	 </div><!-- /.navbar-collapse -->
+ </div><!-- /.container-fluid -->
 </header>
 
 
 <!-- WRAPPER ET CONTENT -->
-<div class="mainContainer">
-		<section>
+<section class="mainContainer">
+	<section>
 			<?= $this->section('main_content') ?>
-		</section>
-</div>
+	</section>
+</section>
 
 
 <!-- FOOTER -->
 <footer>
 	<nav>
 		<ul>
-
 			<li><a href="<?= $this->url("profiluser");?>"> Mon profil</a></li>
 			<li><a href="<?= $this->url("register");?>">Consulter les offres</a></li>
 			<li><a href="<?= $this->url("register");?>">Ajouter des offres</a></li>
 			<li><a href="<?= $this->url("register");?>"> Se déconnecter</a></li>
-
-
-		
 		</ul>
 
 		<h2>Animals</h2>

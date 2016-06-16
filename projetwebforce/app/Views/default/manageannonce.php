@@ -1,8 +1,8 @@
-<?php $this->layout('layoutback', ['title' => 'Gérer les utilisateurs']) ?>
+<?php $this->layout('layoutback', ['title' => 'Gérer les annonces']) ?>
 
 <?php $this->start('main_content') ?>
 
-<h2>Gestion des utilisateurs</h2>
+<h2>Annonces en ligne</h2>
 
 
 <table class="table">
@@ -10,11 +10,10 @@
       <tr>
         <th>#</th>
         <th>Nom</th>
-        <th>Prénom</th>
-        <th>Pseudo</th>
-        <th>Email</th>
-        <th>Role</th>
-        <th>Active</th>
+        <th>Espèce</th>
+        <th>Race</th>
+        <th>Sexe</th>
+        <th>LOF</th>
 
         <th>Modifier</th>
         <th>Bloquer</th>
@@ -23,15 +22,14 @@
     </thead>
 
     <tbody>
-      <?php foreach ($users as $post) { ?>
+      <?php foreach ($annonces as $post) { ?>
         <tr>
             <td><a><?= $post['id']; ?></a></td>
             <td><?= $post['nom']; ?></td>
-            <td><?= $post['prenom'];?></td>
-            <td><?= $post['username']; ?></td>
-            <td><?= $post['email']; ?></td>
-            <td><?= $post['role']; ?></td>
-            <td><?= $post['active']; ?></td>
+            <td><?= $post['idespece'];?></td>
+            <td><?= $post['idrace']; ?></td>
+            <td><?= $post['sexe']; ?></td>
+            <td><?= $post['lof']; ?></td>
 
             <!-- Boutons gestion utilisateurs -->
             <td><a href="<?php $id=$post['id']; echo $this->url("edituser", ["id" => $id]);?>"><button class="boutonBleu" type="button" name="button"><i class="fa fa-pencil" aria-hidden="true"></i></button></a></td>

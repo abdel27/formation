@@ -3,7 +3,7 @@
 <?php $this->start('main_content') ?>
 
 <!-- Section recherche -->
-<section class="rechercheHome">
+<section class="fullWidthHome">
 	<div class="labelRecherche">
 		<label for="espece">Espèce</label>
 		<label for="race">Race</label>
@@ -16,19 +16,18 @@
 		<input class="input" type="text" name="race" value="">
 		<input class="input" type="text" name="sexe" value="">
 		<input class="input" type="text" name="region" value="">
-		<input class="bouton boutonVert" type="button" name="button" value="Rechercher">
+		<input class="input bouton boutonVert" type="button" name="button" value="Rechercher">
 	</div>
 </section>
 
 <!-- Bloc principal de page -->
-<div class="mainContainer">
 
   <!-- Bloc contenant toutes les annonces -->
   <div class="homeWrapper">
     <article class="annonceHome">
       <img src="http://placehold.it/360x180" alt="" />
       <div class="texteAnnonceHome">
-        <h3>Nom de l'animal</h3>
+        <h3><a class="lienTitle" href="<?= $this->url("default_home");?>">Nom de l'animal</a></h3>
         <div class="descriptionAnnonce">
           <div class="boldAnnonce">
             <p class="txtBold">Espèce</p>
@@ -49,7 +48,7 @@
     <article class="annonceHome">
       <img src="http://placehold.it/360x180" alt="" />
       <div class="texteAnnonceHome">
-        <h3>Nom de l'animal</h3>
+        <h3><a class="lienTitle" href="#">Nom de l'animal</a></h3>
         <div class="descriptionAnnonce">
           <div class="boldAnnonce">
             <p class="txtBold">Espèce</p>
@@ -70,7 +69,7 @@
     <article class="annonceHome">
       <img src="http://placehold.it/360x180" alt="" />
       <div class="texteAnnonceHome">
-        <h3>Nom de l'animal</h3>
+        <h3><a class="lienTitle" href="#">Nom de l'animal</a></h3>
         <div class="descriptionAnnonce">
           <div class="boldAnnonce">
             <p class="txtBold">Espèce</p>
@@ -91,7 +90,7 @@
     <article class="annonceHome">
       <img src="http://placehold.it/360x180" alt="" />
       <div class="texteAnnonceHome">
-        <h3>Nom de l'animal</h3>
+        <h3><a class="lienTitle" href="#">Nom de l'animal</a></h3>
         <div class="descriptionAnnonce">
           <div class="boldAnnonce">
             <p class="txtBold">Espèce</p>
@@ -112,7 +111,7 @@
     <article class="annonceHome">
       <img src="http://placehold.it/360x180" alt="" />
       <div class="texteAnnonceHome">
-        <h3>Nom de l'animal</h3>
+        <h3><a class="lienTitle" href="#">Nom de l'animal</a></h3>
         <div class="descriptionAnnonce">
           <div class="boldAnnonce">
             <p class="txtBold">Espèce</p>
@@ -130,8 +129,5 @@
       </div>
     </article>
   </div>
-
-</div>
-
 
 <?php $this->stop('main_content') ?>

@@ -92,18 +92,33 @@ td, th{
   background: #394246;
 }
 
-.boutonModifer{
-  background: #4A90E2;
-  color: white;
-  padding: 2px 5px;
+
+/* Boutons */
+
+/* Bouton de validation */
+.bouton, button{
+	font-family: 'Montserrat', helvetica, sans-serif;
+	color: white;
+	padding: 5px 30px;
+	border: none;
+	border-radius: 4px;
+
+	transition: .3s;
 }
 
-.boutonSupprimer{
-  background: #D0021B;
-  color: white;
-  padding: 2px 5px;
-}
+.boutonVert { background: #7ED321; border: 2px solid #B8E986; }
 
-.boutonSupprimer:hover, .boutonModifer:hover{
-  opacity: .5;
-}
+.boutonBleu { background: #4A90E2; border: 2px solid #64B5F6; }
+
+.boutonOrange{ background: #FF7700; border: 2px solid #FF9B44; }
+
+.boutonRouge { background: #C10000; border: 2px solid #E00000; }
+
+/* Survol boutons */
+.boutonValider:hover{ background: #6BC20C; }
+
+.boutonBleu:hover { background: #64B5F6; }
+
+.boutonOrange:hover{ background: #FF9B44; }
+
+.boutonRouge:hover { background: #E00000; }

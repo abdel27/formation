@@ -5,12 +5,12 @@
 
 <!-- Identité de l'utilisateur -->
 	<div class="contentUser">
-		<img class="imageUser" src="http://placehold.it/522x345" alt="Image test" />
+		<img class="imageUser" src="http://placehold.it/215x215" alt="Image test" />
 
 		<div class="user">
-			<h2>John Doe (01)</h2>
+			<h1>John Doe (Dept)</h1>
 
-			<ul class="nomuser">
+			<ul class="nomUser">
 				<li><span class="txtBold">Pseudo :</span> John Doe</li>
 				<li><span class="txtBold">E-mail :</span> jdoe@toutou.com</li>
 				<li><span class="txtBold">Inscrit depuis :</span> 01/04/2016</li>
@@ -20,7 +20,7 @@
 	</div>
 
 <!-- Nombre d'annonces mises en ligne -->
-	<h3>Annonce mise en ligne (2)</h3>
+	<h2>Annonce mise en ligne (nombre)</h2>
 
 <!-- Affichage des résultats -->
 <div class="homeWrapper">
@@ -31,19 +31,30 @@
 				<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
 				<div class="descriptionAnnonce">
 					<div class="boldAnnonce">
-						<p class="txtBold">Espèce</p>
-						<p class="txtBold">Race</p>
-						<p class="txtBold">Age</p>
-						<p class="txtBold">Sexe</p>
+						<p class="txtBold">Espèce :</p>
+						<p class="txtBold">Race :</p>
+						<p class="txtBold">Age :</p>
+						<p class="txtBold">Sexe :</p>
 						<p class="txtBold">LOF :</p>
-				        <p class="txtBold">Activités :</p>
-				        <p class="txtBold">Ancedotes :</p>
-				        <p class="txtBold">Qualités :</p>
+				    <p class="txtBold">Activités :</p>
+				    <p class="txtBold">Ancedotes :</p>
+				    <p class="txtBold">Qualités :</p>
+					</div>
+
+					<div class="LightAnnonce">
+						<p class="txtLight">Espèce</p>
+						<p class="txtLight">Race</p>
+						<p class="txtLight">Age</p>
+						<p class="txtLight">Sexe</p>
+						<p class="txtLight">LOF</p>
+						<p class="txtLight">Activités</p>
+						<p class="txtLight">Ancedotes</p>
+						<p class="txtLight">Qualités</p>
 					</div>
 				</div>
-				<button class="bouton boutonConsulter" type="button" name="button">Consulter</button>
-				<button class="bouton boutonSupprimer" type="button" name="button">Supprimer</button>
-			</div>		
+				<input class="bouton boutonBleu" type="button" name="button" value="Consulter">
+				<input class="bouton boutonRouge" type="button" name="button" value="Supprimer">
+			</div>
 	</article>
 
 	<article class="detailAnnonce">
@@ -53,28 +64,32 @@
 				<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
 				<div class="descriptionAnnonce">
 					<div class="boldAnnonce">
-						<p class="txtBold">Espèce</p>
-						<p class="txtBold">Race</p>
-						<p class="txtBold">Age</p>
-						<p class="txtBold">Sexe</p>
+						<p class="txtBold">Espèce :</p>
+						<p class="txtBold">Race :</p>
+						<p class="txtBold">Age :</p>
+						<p class="txtBold">Sexe :</p>
 						<p class="txtBold">LOF :</p>
-				        <p class="txtBold">Activités :</p>
-				        <p class="txtBold">Ancedotes :</p>
-				        <p class="txtBold">Qualités :</p>
+						<p class="txtBold">Activités :</p>
+						<p class="txtBold">Ancedotes :</p>
+						<p class="txtBold">Qualités :</p>
+					</div>
+
+					<div class="LightAnnonce">
+						<p class="txtLight">Espèce</p>
+						<p class="txtLight">Race</p>
+						<p class="txtLight">Age</p>
+						<p class="txtLight">Sexe</p>
+						<p class="txtLight">LOF</p>
+						<p class="txtLight">Activités</p>
+						<p class="txtLight">Ancedotes</p>
+						<p class="txtLight">Qualités</p>
 					</div>
 				</div>
-				<button class="bouton boutonConsulter" type="button" name="button">Consulter</button>
-				<button class="bouton boutonSupprimer" type="button" name="button">Supprimer</button>
-			</div>		
-	</article>	
+				<input class="bouton boutonBleu" type="button" name="button" value="Consulter">
+				<input class="bouton boutonRouge" type="button" name="button" value="Supprimer">
+			</div>
+	</article>
 </div>
-
-
-
-		   
-			
-	
-	
 
 
 <?php $this->stop('main_content') ?>

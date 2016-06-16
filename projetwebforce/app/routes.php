@@ -54,4 +54,12 @@
   ['GET','/edituser/[:id]','Default#edituser', 'edituser'],
   ['GET','/deleteuser/[:id]','Default#deleteuser', 'deleteuser'],
 
+	// Gestion des annonces
+	['GET','/manageannonce','Default#manageannonce', 'manageannonce'],
+	['GET','/editannonce/[:id]','Default#editannonce', 'editannonce'],
+	['GET','/deleteannonce/[:id]','Default#deleteannonce', 'deleteannonce'],
+
+	// Autorisation des annonces
+	['GET','/postannonce','Default#postannonce', 'postannonce'],
+
 	);
