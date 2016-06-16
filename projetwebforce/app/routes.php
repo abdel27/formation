@@ -35,15 +35,13 @@
 	// Page annonce unique
 	['GET','/detail','Default#detail', 'detail'],
 
-<<<<<<< HEAD
 	//Page profil utilisateur
 	['GET','/profil','Default#profiluser', 'profiluser'],
-=======
+
 	// Page contact
 	['GET','/contact','Default#contact', 'contact'],
 
 
->>>>>>> origin/master
 
 // Back
   ['GET','/layoutback','View#layoutback', 'layoutback'],

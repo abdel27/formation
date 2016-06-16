@@ -30,8 +30,8 @@ print_r($_SESSION);
       </div>
 
        
-        <a href="<?php echo $this->url("forget");?>">Mot de passe oublié</a>
-        <label>Se souvenir de moi ?</label><input type="checkbox" name="souvenir" /><br />
+        
+       
         
 
 
