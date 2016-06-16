@@ -131,12 +131,19 @@ class DefaultController extends Controller
         //Instance de la class USerModel
         $model = new UserModel();
         $user = $model->find($id);
-        debug($user);
+        //debug($user);
+        //$this->show('default/edituser');
+        //$this->show('default/edituser' , ['id' => $id]);
+        //$this->show('default/edituser' , array('user' => $user));
         //Instance de la class Departement
         $all = new DepartementModel();
         $departements = $all->findAll();
-        //debug($departement);
-        $this->show('default/edituser' , ['id' => $id], array('departement' => $departements));
+        debug($departements);
+        
+        $this->show('default/edituser' , array(
+            'departements' => $departements,
+            'user' => $user
+        ));
   
   
     } 

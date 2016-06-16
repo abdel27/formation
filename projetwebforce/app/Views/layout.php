@@ -41,7 +41,7 @@
 
 		<ul class="menuHeader">
 		<li><a href="<?= $this->url("profiluser");?>"> Mon profil</a></li>
-		  <li><a href="<?= $this->url("register");?>">Consulter les offres</a></li>
+		  <li><a href="<?= $this->url("default_home");?>">Consulter les offres</a></li>
 		  <li><a href="<?= $this->url("register");?>">Ajouter des offres</a></li>
 		  <li><a href="<?= $this->url("register");?>"> Se déconnecter</a></li>
 		  <li><a href="<?= $this->url("register");?>"> S'inscrire</a></li>
