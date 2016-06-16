@@ -4,22 +4,20 @@
 
 <!-- Section recherche -->
 <section class="rechercheHome">
-  <div class="labelRecherche">
-    <label for="espece">Espèce</label>
-    <label for="race">Race</label>
-    <label for="sexe">Sexe</label>
-    <label for="region">Région</label>
-    <label for="keyword">Mots clés</label>
-  </div>
+	<div class="labelRecherche">
+		<label for="espece">Espèce</label>
+		<label for="race">Race</label>
+		<label for="sexe">Sexe</label>
+		<label for="region">Région</label>
+	</div>
 
-  <div class="inputRecherche">
-    <input class="input" type="text" name="espece" value="">
-    <input class="input" type="text" name="race" value="">
-    <input class="input" type="text" name="sexe" value="">
-    <input class="input" type="text" name="region" value="">
-    <input class="input" type="text" name="keyword" value="">
-    <input class="bouton boutonVert" type="button" name="button" value="Rechercher">
-  </div>
+	<div class="inputRecherche">
+		<input class="input" type="text" name="espece" value="">
+		<input class="input" type="text" name="race" value="">
+		<input class="input" type="text" name="sexe" value="">
+		<input class="input" type="text" name="region" value="">
+		<input class="bouton boutonVert" type="button" name="button" value="Rechercher">
+	</div>
 </section>
 
 <!-- Bloc principal de page -->
@@ -135,5 +133,5 @@
 
 </div>
 
-	
+
 <?php $this->stop('main_content') ?>

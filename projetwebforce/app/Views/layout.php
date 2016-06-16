@@ -20,6 +20,9 @@
 	<!-- Lien vers la feuille de styles CSS -->
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/style.css') ?>">
 
+	<!-- Font awesome -->
+	<script src="https://use.fontawesome.com/1826dfabfc.js"></script>
+
 	<!-- Fonts -->
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Droid+Serif:400,700' rel='stylesheet' type='text/css'>
 </head>
@@ -30,11 +33,11 @@
 <!-- HEADER -->
 <header>
 	<nav class="titreHeader">
-		<h2><a href="#">Animals</a></h2>
+		<h2><a href="<?= $this->url("default_home");?>">Animals</a></h2>
 
 		<ul class="menuHeader">
-		  <li><a href="<?= $this->url("register");?>">Consulter les offres</a></li>
-		  <li><a href="<?= $this->url("register");?>">Ajouter des offres</a></li>
+		  <li><a href="<?= $this->url("default_home");?>">Consulter les offres</a></li>
+		  <li><a href="<?= $this->url("newannonce");?>">Ajouter des offres</a></li>
 		  <li><a href="<?= $this->url("register");?>"> S'inscrire</a></li>
 		  <li><a href="<?= $this->url("login");?>"> Se connecter</a></li>
 		</ul>
@@ -54,14 +57,15 @@
 <footer>
 	<nav>
 		<ul>
-			<li><a href="<?= $this->url("register");?>">Consulter les offres</a></li>
-			<li><a href="<?= $this->url("register");?>">Ajouter des offres</a></li>
+
+			<li><a href="<?= $this->url("default_home");?>">Consulter les offres</a></li>
+			<li><a href="<?= $this->url("newannonce");?>">Ajouter des offres</a></li>
 			<li><a href="<?= $this->url("login");?>"> Se connecter</a></li>
 		</ul>
 
 		<h2>Animals</h2>
 
-		<a href="#">Nous contacter</a>
+		<a href="<?= $this->url("contact");?>">Nous contacter</a>
 	</nav>
 </footer>
 

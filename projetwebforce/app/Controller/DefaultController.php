@@ -31,6 +31,13 @@ class DefaultController extends Controller
   
   
 
+
+		public function contact()
+		{
+		$this->show('default/contact');
+		}
+
+
     //Methode pour aller chercher tout les enregistrements de la table
     public function dashboard()
     {

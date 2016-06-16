@@ -35,6 +35,11 @@
 	// Page annonce unique
 	['GET','/detail','Default#detail', 'detail'],
 
+	// Page contact
+	['GET','/contact','Default#contact', 'contact'],
+
+
+
 // Back
   ['GET','/layoutback','View#layoutback', 'layoutback'],
 
