@@ -30,13 +30,13 @@
 <!-- HEADER -->
 <header>
 	<nav class="titreHeader">
-		<h2><a href="#">Animals</a></h2>
+		<h2><a href="<?php echo $this->url("default_home");?>">Animals</a></h2>
 
 		<ul class="menuHeader">
+		<li><a href="<?= $this->url("profiluser");?>"> Mon profil</a></li>
 		  <li><a href="<?= $this->url("register");?>">Consulter les offres</a></li>
 		  <li><a href="<?= $this->url("register");?>">Ajouter des offres</a></li>
-		  <li><a href="<?= $this->url("register");?>"> S'inscrire</a></li>
-		  <li><a href="<?= $this->url("register");?>"> Se connecter</a></li>
+		  <li><a href="<?= $this->url("register");?>"> Se déconnecter</a></li>
 		</ul>
 	</nav>
 </header>
@@ -54,9 +54,10 @@
 <footer>
 	<nav>
 		<ul>
+			<li><a href="<?= $this->url("profiluser");?>"> Mon profil</a></li>
 			<li><a href="<?= $this->url("register");?>">Consulter les offres</a></li>
 			<li><a href="<?= $this->url("register");?>">Ajouter des offres</a></li>
-			<li><a href="<?= $this->url("register");?>"> Se connecter</a></li>
+			<li><a href="<?= $this->url("register");?>"> Se déconnecter</a></li>
 		</ul>
 
 		<h2>Animals</h2>

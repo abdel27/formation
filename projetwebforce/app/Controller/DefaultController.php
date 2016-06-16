@@ -37,6 +37,10 @@ class DefaultController extends Controller
     $this->show('default/login');
     }
 
+    public function profiluser()
+    {
+    $this->show('default/profiluser');
+    }
 
 	public function detail()
 		{

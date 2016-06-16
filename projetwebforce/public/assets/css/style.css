@@ -62,7 +62,27 @@ a:hover{ text-decoration: none; color: white; }
 	background: #6BC20C;
 }
 
+/*Boutons de consultation et suppression */
+.boutonConsulter {
+	background: #4A90E2;
+	border: 2px solid #4A90E2;
+}
 
+.boutonSupprimer {
+	background: #C10000;
+	border: 2px solid #C10000;
+}
+
+/*Survol boutons de consultation et suppression*/
+.boutonConsulter:hover {
+	background: #64B5F6;
+	border: 2px solid #64B5F6;
+}
+
+.boutonSupprimer:hover {
+	background: #E00000;
+	border: 2px solid #E00000;
+}
 
 /* Blocs principaux */
 
@@ -85,7 +105,7 @@ a:hover{ text-decoration: none; color: white; }
 	box-shadow: 0px 4px 3px 0px rgba(0,0,0,0.20);
 }
 
-.contentAnnonce{
+.contentAnnonce, .contentUser {
 	display: flex;
 }
 
@@ -96,7 +116,51 @@ a:hover{ text-decoration: none; color: white; }
 	margin-right: 20px;
 }
 
+/* PROFIL USER */
+/*Bloc identité user */
+.contentUser {
+	background: #FFF;
+	margin-bottom: 20px;
+}
+.imageUser {
+	width: 20%;
+	margin-right: 20px;
+}
 
+.user {
+	width: 90%;
+	margin-top: 20px;
+}
+
+.nomuser {
+	margin-top: 30px;
+}
+
+.nomuser li {
+	font-family: 'Droid Serif', serif;
+	display: inline;
+	margin-right: 20px;
+}
+
+.glyphicon, .glyphicon-cog {
+	width: 10%;
+	font-size: 2em;
+	margin-top: 20px;
+}
+
+/* Bloc description détaillée de l'annonce*/
+.detailAnnonce {
+	background: white;
+	border-radius: 4px;
+	/*max-*/width: 48%;
+	margin: 20px 1%;
+
+	box-shadow: 0px 4px 3px 0px rgba(0,0,0,0.20);
+}
+
+.imageDetail {
+	width: 100%;
+}
 
 /* Blocs texte */
 

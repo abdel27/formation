@@ -35,6 +35,9 @@
 	// Page annonce unique
 	['GET','/detail','Default#detail', 'detail'],
 
+	//Page profil utilisateur
+	['GET','/profil','Default#profiluser', 'profiluser'],
+
 // Back
   ['GET','/layoutback','View#layoutback', 'layoutback'],
 
