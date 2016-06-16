@@ -22,8 +22,8 @@ print_r($_SESSION);
         
 
         <div class="form-group">
-            <label for="password">Password*</label>
-
+            <span class="error" ><?php if(!empty($error['connexion'])) { echo $error['connexion']; } ?></label>
+            
             <!--Affichage des message d'erreur si les cntraintes ne sont pas respectées-->
             <span class="error"><?php if(!empty($error['password'])) { echo $error['password']; } ?></span>
             <input type="password" name="password" id="password" class="form-control" value="<?php if(!empty($_POST['password'])) { echo $_POST['password']; } ?>" />

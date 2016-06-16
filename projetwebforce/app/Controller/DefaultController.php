@@ -228,6 +228,7 @@ class DefaultController extends Controller
             $validation = new Validation();
             $error['username']  = $validation->checkValidation($username,'username',3,40);
             $error['password']  = $validation->checkValidation($password,'password',8,40);
+            
             //Si pas d'erreur
             if ($validation->isValide($error)){
 
