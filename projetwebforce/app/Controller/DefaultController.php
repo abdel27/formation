@@ -33,7 +33,11 @@ class DefaultController extends Controller
 
     public function profiluser()
     {
-    $this->show('default/profiluser');
+        $all = new AnnonceModel();
+        $annonces = $all->findAll();
+        $all = new UserModel();
+        $users = $all->findAll();
+        $this->show('default/profiluser', array('annonces' =>$annonces , 'users' => $users));
     }
 
 		public function contact()
@@ -330,9 +334,24 @@ class DefaultController extends Controller
         $this->redirectToRoute('login');
     }
 
+    //Méthode pour supprimer une annonce
+    public function deleteannonce($id)
+    {
+        //Instancier la class AnnonceModel
+        $model = new AnnonceModel();
+        $annonce = $model->delete($id);
+        $this->show('default/deleteannonce' , ['id' => $id]);
+    }
 
-    
+    //Méthode pour récupérer tous les détails d'une annonce
+    public function detail() {
+        //Instancier la classe AnnonceModel
+        $all = new AnnonceModel();
+        $details = $all->findAll();
+        $this->show('default/detail', array('details' => $details));
 
+
+    }
 }
 
 

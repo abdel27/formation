@@ -74,11 +74,14 @@ a:hover{ text-decoration: none; color: white; }
 
 /*Boutons de consultation et suppression */
 .boutonConsulter {
+	margin-top: 20px;
 	background: #4A90E2;
 	border: 2px solid #4A90E2;
 }
 
 .boutonSupprimer {
+	margin-top: 20px;
+	margin-left: 150px;
 	background: #C10000;
 	border: 2px solid #C10000;
 }
@@ -152,17 +155,18 @@ a:hover{ text-decoration: none; color: white; }
 	margin-right: 20px;
 }
 
-.glyphicon, .glyphicon-cog {
-	width: 10%;
-	font-size: 2em;
+.fa-cog {
+	margin-left: 10px;
+	font-size: 5em;
 	margin-top: 20px;
+	color: #000;
 }
 
 /* Bloc description détaillée de l'annonce*/
 .detailAnnonce {
 	background: white;
 	border-radius: 4px;
-	/*max-*/width: 48%;
+	width: 48%;
 	margin: 20px 1%;
 
 	box-shadow: 0px 4px 3px 0px rgba(0,0,0,0.20);
@@ -171,6 +175,13 @@ a:hover{ text-decoration: none; color: white; }
 .imageDetail {
 	width: 100%;
 }
+
+.texteDetailAnnonce h3 {
+	width: 50%;
+}
+
+
+
 
 /* Blocs texte */
 
@@ -241,11 +252,11 @@ a:hover{ text-decoration: none; color: white; }
 	width: 100%;
 }
 
-.texteAnnonceHome{
+.texteAnnonceHome, .texteDetailAnnonce {
 	padding: 5%;
 }
 
-.texteAnnonceHome h3{
+.texteAnnonceHome h3, .texteDetailAnnonce h3 {
 	padding-bottom: 5%;
 }
 

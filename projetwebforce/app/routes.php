@@ -41,6 +41,11 @@
 	// Page contact
 	['GET','/contact','Default#contact', 'contact'],
 
+	//Page delete annonce
+	['GET','/deleteannonce/[:id]','Default#deleteannonce', 'deleteannonce'],
+
+	//Récupérer une annonce
+	['GET','/manageannonce','Default#manageannonce', 'manageannonce'],
 
 
 // Back
@@ -54,4 +59,10 @@
   ['GET','/edituser/[:id]','Default#edituser', 'edituser'],
   ['GET','/deleteuser/[:id]','Default#deleteuser', 'deleteuser'],
 
-	);
+  
+
+
+
+
+
+);
