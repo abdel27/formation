@@ -21,6 +21,9 @@
 	<!-- Lien vers la feuille de styles CSS -->
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/style.css') ?>">
 
+	<!-- Font awesome -->
+	<script src="https://use.fontawesome.com/1826dfabfc.js"></script>
+
 	<!-- Fonts -->
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Droid+Serif:400,700' rel='stylesheet' type='text/css'>
 </head>
@@ -30,6 +33,26 @@
 
 <!-- HEADER -->
 <header>
+<<<<<<< HEAD
+=======
+	<nav class="titreHeader">
+
+		<h2><a href="<?php echo $this->url("default_home");?>">Animals</a></h2>
+
+		<ul class="menuHeader">
+		<li><a href="<?= $this->url("profiluser");?>"> Mon profil</a></li>
+		  <li><a href="<?= $this->url("register");?>">Consulter les offres</a></li>
+		  <li><a href="<?= $this->url("register");?>">Ajouter des offres</a></li>
+		  <li><a href="<?= $this->url("register");?>"> Se déconnecter</a></li>
+		  <li><a href="<?= $this->url("register");?>"> S'inscrire</a></li>
+
+
+
+		</ul>
+	</nav>
+</header>
+
+>>>>>>> origin/master
 
  <div class="container-fluid">
 	 <!-- Brand and toggle get grouped for better mobile display -->
@@ -59,6 +82,7 @@
 <!-- FOOTER -->
 <footer>
 	<nav>
+<<<<<<< HEAD
 		<ul class="nav navbar-nav navbar-right" style="text-align: center">
 			<li><a href="<?= $this->url("default_home");?>">Consulter les offres</a></li>
 		 <li><a href="<?= $this->url("newannonce");?>">Ajouter des offres</a></li>
@@ -70,10 +94,22 @@
 			<li><a href="<?= $this->url("register");?>">Ajouter des offres</a></li>
 			<li><a href="<?= $this->url("register");?>"> Se connecter</a></li>
 		</ul> -->
+=======
+		<ul>
+
+			<li><a href="<?= $this->url("profiluser");?>"> Mon profil</a></li>
+			<li><a href="<?= $this->url("register");?>">Consulter les offres</a></li>
+			<li><a href="<?= $this->url("register");?>">Ajouter des offres</a></li>
+			<li><a href="<?= $this->url("register");?>"> Se déconnecter</a></li>
+
+
+
+		</ul>
+>>>>>>> origin/master
 
 		<h2>Animals</h2>
 
-		<a href="#">Nous contacter</a>
+		<a href="<?= $this->url("contact");?>">Nous contacter</a>
 	</nav>
 </footer>
 
