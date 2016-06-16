@@ -44,9 +44,9 @@
           </section>
         </nav>
 
-      <?php
+      <!--<?php
       debug($w_user);
-      ?>
+      ?>-->
     </header>
     <section>
       <?= $this->section('main_content') ?>

@@ -1,6 +1,6 @@
-<?php
+<?php 
 
-$this->layout('layout', ['title' => 'register']) ?>
+$this->layout('layoutback', ['title' => 'register']) ?>
 
 <?php $this->start('main_content') ?>
 
@@ -13,7 +13,7 @@ $this->layout('layout', ['title' => 'register']) ?>
 
 
         <div class="form-group">
-          <label for="nom">Nom *</label>
+          <label for="nom">NOM*</label>
 
           <!--Affichage des message d'erreur si les cntraintes ne sont pas respectées-->
           <span class="error"><?php if(!empty($error['nom'])) { echo $error['nom']; } ?></span>
@@ -21,16 +21,16 @@ $this->layout('layout', ['title' => 'register']) ?>
         </div>
 
         <div class="form-group">
-          <label for="pseudo">Prénom *</label>
+          <label for="prenom">PRENOM*</label>
 
           <!--Affichage des message d'erreur si les cntraintes ne sont pas respectées-->
           <span class="error"><?php if(!empty($error['prenom'])) { echo $error['prenom']; } ?></span>
           <input type="text" name="prenom" id="prenom" class="form-control" value="<?php if(!empty($_POST['prenom'])) { echo $_POST['prenom']; } ?>" />
         </div>
-
+      
 
         <div class="form-group">
-          <label for="pseudo">Pseudo *</label>
+          <label for="username">PSEUDO*</label>
 
           <!--Affichage des message d'erreur si les cntraintes ne sont pas respectées-->
           <span class="error"><?php if(!empty($error['username'])) { echo $error['username']; } ?></span>
@@ -38,7 +38,7 @@ $this->layout('layout', ['title' => 'register']) ?>
         </div>
 
         <div class="form-group">
-          <label for="email">Email *</label>
+          <label for="email">Email*</label>
 
           <!--Affichage des message d'erreur si les cntraintes ne sont pas respectées-->
           <span class="error"><?php if(!empty($error['email'])) { echo $error['email']; } ?></span>
@@ -46,15 +46,29 @@ $this->layout('layout', ['title' => 'register']) ?>
         </div>
 
         <div class="form-group">
-          <label for="pseudo">Departement *</label>
+          <label for="departement">Departement*</label>
 
-          <!--Affichage des message d'erreur si les cntraintes ne sont pas respectées-->
+          <!--Affichage des message d'erreur si les cntraintes ne sont pas respectées
           <span class="error"><?php if(!empty($error['departement'])) { echo $error['departement']; } ?></span>
-          <input type="text" name="departement" id="departement" class="form-control" value="<?php if(!empty($_POST['departement'])) { echo $_POST['departement']; } ?>" />
+          <input type="text" name="departement" id="departement" class="form-control" value="<?php if(!empty($_POST['departement'])) { echo $_POST['departement']; } ?>" />-->
+          <select>
+                <option></option>
+                <?php
+                  //print_r($departements);
+                 foreach ($departements as $departement) {
+                ?>
+                <option value="<?php echo $departement['idep']?>"> <?php echo $departement['nom'] ?>" </option>
+                <?php } ?>
+              
+              
+                
+                
+              
+          </select>
         </div>
 
         <div class="form-group">
-            <label for="password1">Mot de passe *</label>
+            <label for="password">Password*</label>
 
             <!--Affichage des message d'erreur si les cntraintes ne sont pas respectées-->
             <span class="error"><?php if(!empty($error['password'])) { echo $error['password']; } ?></span>
@@ -62,15 +76,15 @@ $this->layout('layout', ['title' => 'register']) ?>
         </div>
 
          <div class="form-group">
-            <label for="password2">Confirmation du mot de passe *</label>
+            <label for="password2">Password confirm*</label>
 
             <!--Affichage des message d'erreur si les contraintes ne sont pas respectées-->
             <span class="error"><?php if(!empty($error['password2'])) { echo $error['password2']; } ?></span>
             <input type="text" name="password2" id="password2" class="form-control" value="<?php if(!empty($_POST['password2'])) { echo $_POST['password2']; } ?>" />
         </div>
-
-        <input type="submit" name="submit" class="btn btn-primary" value="Envoyer" />
-
+     
+        <input type="submit" name="submit" class="btn btn-primary" value="Inscription" />
+        
     </form>
 
 

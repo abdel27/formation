@@ -36,7 +36,7 @@
 		  <li><a href="<?= $this->url("register");?>">Consulter les offres</a></li>
 		  <li><a href="<?= $this->url("register");?>">Ajouter des offres</a></li>
 		  <li><a href="<?= $this->url("register");?>"> S'inscrire</a></li>
-		  <li><a href="<?= $this->url("register");?>"> Se connecter</a></li>
+		  <li><a href="<?= $this->url("login");?>"> Se connecter</a></li>
 		</ul>
 	</nav>
 </header>
@@ -56,7 +56,7 @@
 		<ul>
 			<li><a href="<?= $this->url("register");?>">Consulter les offres</a></li>
 			<li><a href="<?= $this->url("register");?>">Ajouter des offres</a></li>
-			<li><a href="<?= $this->url("register");?>"> Se connecter</a></li>
+			<li><a href="<?= $this->url("login");?>"> Se connecter</a></li>
 		</ul>
 
 		<h2>Animals</h2>

@@ -4,8 +4,7 @@
 
 
 
-<h2>Modifier un utilisateur</h2>
-
+<h4>Modifier un utilisateur</h4>  
 
  <form action="<?php echo $this->url('edituser'); ?>" method="POST" id="formulaire">
 
@@ -19,7 +18,7 @@
 
           <!--Affichage des message d'erreur si les cntraintes ne sont pas respectées-->
           <span class="error"><?php if(!empty($error['nom'])) { echo $error['nom']; } ?></span>
-          <input type="text" name="nom" id="nom" class="form-control" value="<?php if(!empty($_POST['nom'])) { echo $_POST['nom']; } ?>" />
+          <input type="text" name="nom" id="nom" class="form-control" value="<?php echo $user['nom'] ?>" />
         </div>
 
         <div class="form-group">
@@ -29,7 +28,7 @@
           <span class="error"><?php if(!empty($error['prenom'])) { echo $error['prenom']; } ?></span>
           <input type="text" name="prenom" id="prenom" class="form-control" value="<?php if(!empty($_POST['prenom'])) { echo $_POST['prenom']; } ?>" />
         </div>
-
+      
 
         <div class="form-group">
           <label for="pseudo">PSEUDO</label>
@@ -50,9 +49,16 @@
         <div class="form-group">
           <label for="pseudo">Departement</label>
 
-          <!--Affichage des message d'erreur si les cntraintes ne sont pas respectées-->
-          <span class="error"><?php if(!empty($error['departement'])) { echo $error['departement']; } ?></span>
-          <input type="text" name="departement" id="departement" class="form-control" value="<?php if(!empty($_POST['departement'])) { echo $_POST['departement']; } ?>" />
+          <select>
+                <option></option>
+                <?php
+                  //print_r($departements);
+                 foreach ($departements as $departement) {
+                ?>
+                <option class="form-control" value="<?php echo $departement['idep']?>"> <?php echo $departement['nom'] ?>" </option>
+                <?php } ?>
+          </select>
+        
         </div>
 
         <div class="form-group">
@@ -126,9 +132,9 @@
           <span class="error"><?php if(!empty($error['tel'])) { echo $error['tel']; } ?></span>
           <input type="text" name="tel" id="tel" class="form-control" value="<?php if(!empty($_POST['tel'])) { echo $_POST['tel']; } ?>" />
         </div>
-
+     
         <input type="submit" name="submit" class="btn btn-primary" value="Modifier" />
-
+        
     </form>
 
     <?php $this->stop('main_content') ?>

@@ -36,6 +36,9 @@ private $city;
 private $error;
 
 
+
+
+
 //Fonction pour recuperer le mail et le token
 
 public function findEmailToken() {
