@@ -137,12 +137,20 @@ class DefaultController extends Controller
         //Instance de la class USerModel
         $model = new UserModel();
         $user = $model->find($id);
-        debug($user);
+        //debug($user);
+        //$this->show('default/edituser');
+        //$this->show('default/edituser' , ['id' => $id]);
+        //$this->show('default/edituser' , array('user' => $user));
         //Instance de la class Departement
         $all = new DepartementModel();
         $departements = $all->findAll();
-        //debug($departement);
-        $this->show('default/edituser' , ['id' => $id], array('departement' => $departements));
+
+        //debug($departements);
+
+        $this->show('default/edituser' , array(
+            'departements' => $departements,
+            'user' => $user
+        ));
 
 
     }
@@ -353,6 +361,32 @@ class DefaultController extends Controller
         $this->redirectToRoute('login');
     }
 
+    public function edituseraction() {
+
+        if(!empty($_POST['submit'])) {
+
+        // protection XSS
+
+        $nom =              trim(strip_tags($_POST['nom']));
+        $prenom =           trim(strip_tags($_POST['prenom']));
+        $username =         trim(strip_tags($_POST['username']));
+        $departement =      trim(strip_tags($_POST['departement']));
+        $email  =           trim(strip_tags($_POST['email']));
+        $date_naissance  =  trim(strip_tags($_POST['date_naissance']));
+        $role =             trim(strip_tags($_POST['role']));
+        $active =         trim(strip_tags($_POST['active']));
+        $situation =        trim(strip_tags($_POST['situation']));
+        $adresse =          trim(strip_tags($_POST['adresse']));
+        $codepostal =       trim(strip_tags($_POST['code_postal']));
+        $tel =              trim(strip_tags($_POST['tel']));
+        $city =             trim(strip_tags($_POST['city']));
+
+    }
+
+
+
+
+}
 
 
 

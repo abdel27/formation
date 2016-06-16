@@ -51,7 +51,10 @@
 
 	// Gestion des utilisateurs
   ['GET','/manageuser','Default#manageuser', 'manageuser'],
+
+  
   ['GET','/edituser/[:id]','Default#edituser', 'edituser'],
+  ['POST','/edituser','Default#edituseraction', 'edituseraction'],
   ['GET','/deleteuser/[:id]','Default#deleteuser', 'deleteuser'],
 
 	// Gestion des annonces

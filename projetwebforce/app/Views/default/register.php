@@ -1,15 +1,17 @@
 <?php
 
-$this->layout('layoutback', ['title' => 'register']) ?>
+$this->layout('layout', ['title' => 'register']) ?>
 
 <?php $this->start('main_content') ?>
 
-<div class="mainWrapper">
-  <div class="titreCentre">
-    <h1>Inscription</h1>
-  </div>
 
   <!-- Formulaire -->
+  <div class="mainWrapper">
+    <div class="titreCentre">
+      <h1>Inscription</h1>
+    </div>
+
+
   <form action="<?php echo $this->url('registeraction'); ?>" method="POST" id="formulaire">
         <div class="form-group">
           <label for="nom">Nom *</label>

@@ -2,11 +2,12 @@
 <html lang="fr">
 <head>
 	<meta charset="UTF-8">
+	<!-- Meta pour adapter les pages au mobile -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title><?= $this->e($title) ?></title>
 
 
-	<!-- Meta pour adapter les pages au mobile -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+
 
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -39,13 +40,13 @@
 
 		 <!-- Collect the nav links, forms, and other content for toggling -->
 			 <ul class="nav navbar-nav navbar-right">
+			 	<li><a href="<?= $this->url("profiluser");?>"> Mon profil</a></li>
 				<li><a href="<?= $this->url("default_home");?>">Consulter les offres</a></li>
 				<li><a href="<?= $this->url("newannonce");?>">Ajouter des offres</a></li>
 				<li><a href="<?= $this->url("register");?>"> S'inscrire</a></li>
 				<li><a href="<?= $this->url("login");?>"> Se connecter</a></li>
 			 </ul>
 
-	 </div><!-- /.navbar-collapse -->
  </div><!-- /.container-fluid -->
 </header>
 
@@ -61,11 +62,11 @@
 <!-- FOOTER -->
 <footer>
 	<nav>
-		<ul>
-			<li><a href="<?= $this->url("profiluser");?>"> Mon profil</a></li>
-			<li><a href="<?= $this->url("register");?>">Consulter les offres</a></li>
-			<li><a href="<?= $this->url("register");?>">Ajouter des offres</a></li>
-			<li><a href="<?= $this->url("register");?>"> Se déconnecter</a></li>
+		<ul class="nav navbar-nav navbar-right" style="text-align: center">
+		 <li><a href="<?= $this->url("default_home");?>">Consulter les offres</a></li>
+		 <li><a href="<?= $this->url("newannonce");?>">Ajouter des offres</a></li>
+		 <li><a href="<?= $this->url("register");?>"> S'inscrire</a></li>
+		 <li><a href="<?= $this->url("login");?>"> Se connecter</a></li>
 		</ul>
 
 		<h2>Animals</h2>
