@@ -1,11 +1,13 @@
 <?php $this->layout('layoutback', ['title' => 'manageuser']) ?>
 
 <?php $this->start('main_content') ?>
-<h4>Gestion utilisateur</h4>  
+
+<h2>Gestion utilisateurs</h2>
+
+
 <table class="table">
     <thead>
       <tr>
-
         <th>Identifiant</th>
         <th>Nom</th>
         <th>Prenom</th>
@@ -26,35 +28,40 @@
         <th>Telephone</th>
         <th>Ville</th>
 
-        
-
+        <th>Modifier</th>
+        <th>Bloquer</th>
+        <th>Supprimer</th>
       </tr>
     </thead>
+
     <tbody>
       <?php foreach ($users as $post) { ?>
         <tr>
-            <td><a><?php echo $post['id']; ?></a></td>    
-            <td><?php echo $post['nom']; ?></td>
-            <td><?php echo $post['prenom'];?></td>
-            <td><?php echo $post['username']; ?></td>
-            <td><?php echo $post['date_naissance']; ?></td>
-            <td><?php echo $post['email']; ?></td>
-            <td><?php echo $post['password']; ?></td>
-            <td><?php echo $post['token']; ?></td>
-            <td><?php echo $post['ip']; ?></td>
-            <td><?php echo $post['created_at']; ?></td>
-            <td><?php echo $post['departement']; ?></td>
-            <td><?php echo $post['role']; ?></td>
-            <td><?php echo $post['active']; ?></td>
-            <td><?php echo $post['last_connection']; ?></td>
-            <td><?php echo $post['situation']; ?></td>
-            <td><?php echo $post['adresse']; ?></td>
-            <td><?php echo $post['codepostal']; ?></td>
-            <td><?php echo $post['tel']; ?></td>
-            <td><?php echo $post['city']; ?></td>
-            <td><a class="boutonModifier" href="<?php $id=$post['id']; echo $this->url("edituser", ["id" => $id]);
-            ?>">Modifier</a></td>
-            <td><a class="boutonSupprimer" href="">Supprimer</a></td>
+
+            <td><a><?= $post['id']; ?></a></td>
+            <td><?= $post['nom']; ?></td>
+            <td><?= $post['prenom'];?></td>
+            <td><?= $post['username']; ?></td>
+            <td><?= $post['date_naissance']; ?></td>
+            <td><?= $post['email']; ?></td>
+            <td><?= $post['password']; ?></td>
+            <td><?= $post['token']; ?></td>
+            <td><?= $post['ip']; ?></td>
+            <td><?= $post['created_at']; ?></td>
+            <td><?= $post['departement']; ?></td>
+            <td><?= $post['role']; ?></td>
+            <td><?= $post['active']; ?></td>
+            <td><?= $post['last_connection']; ?></td>
+            <td><?= $post['situation']; ?></td>
+            <td><?= $post['adresse']; ?></td>
+            <td><?= $post['codepostal']; ?></td>
+            <td><?= $post['tel']; ?></td>
+            <td><?= $post['city']; ?></td>
+
+            <!-- Boutons gestion utilisateurs -->
+            <td><a class="boutonModifer" href="<?php $id=$post['id']; echo $this->url("edituser", ["id" => $id]);?>"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+            <td><a class="boutonBloquer" href="#"><i class="fa fa-user-times" aria-hidden="true"></i></a></td>
+            <td><a class="boutonSupprimer" href="<?php $id=$post['id']; echo $this->url("deleteuser", ["id" => $id]);?>"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
          </tr>
       <?php } ?>
     </tbody>

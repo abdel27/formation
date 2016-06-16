@@ -36,6 +36,16 @@ a {
 
 a:hover{ text-decoration: none; color: white; }
 
+.lienTxt{
+	color: #4A90E2;
+	font-weight: 700;
+
+	transition: .3s;
+}
+
+.lienTxt:hover{
+	color: #272F32;
+}
 
 
 
@@ -149,6 +159,7 @@ a:hover{ text-decoration: none; color: white; }
 .homeWrapper{
 	display: flex;
 	flex-wrap: wrap;
+
 	max-width: 1140px;
 	margin: 0 auto;
 }
@@ -214,6 +225,7 @@ header {
 nav{
 	display: flex;
 	justify-content: space-between;
+
 	max-width: 1140px;
 	margin: 0 auto;
 	align-items: center;
