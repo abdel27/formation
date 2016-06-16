@@ -2,13 +2,12 @@
 
 <?php $this->start('main_content') ?>
 
-
+<!--
 
 <h4>Liste des annonces</h4>
 <table class="table tableBackOffice">
     <thead>
       <tr>
-
         <th>Identifiant</th>
         <th>Nom</th>
         <th>Espece</th>
@@ -19,10 +18,9 @@
         <th>Description</th>
         <th>Date de creation</th>
         <th>Action</th>
-
-
       </tr>
     </thead>
+
     <tbody>
       <?php foreach ($annonce as $post) { ?>
         <tr>
@@ -42,5 +40,6 @@
       <?php } ?>
     </tbody>
   </table>
+-->
 
   <?php $this->stop('main_content') ?>
