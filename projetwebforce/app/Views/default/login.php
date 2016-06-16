@@ -29,12 +29,6 @@ print_r($_SESSION);
         <input type="password" name="password" id="password" class="form-control" value="<?php if(!empty($_POST['password'])) { echo $_POST['password']; } ?>" />
       </div>
 
-       
-        
-       
-        
-
-
       <a class="lienTxt" href="<?php echo $this->url("forget");?>">Mot de passe oublié ?</a><br>
 
 
