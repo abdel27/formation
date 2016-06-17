@@ -1,120 +1,92 @@
 
 <?php
 
-$this->layout('layout', ['title' => 'login']) ?>
+$this->layout('layoutlogin', ['title' => 'login']) ?>
 
 <?php $this->start('main_content') ?>
-<?php
-print_r($_SESSION);
-?>
 
-<form action="" method="POST" id="formulaire">
 
-  <section id="intro">
-        <div class="container-fluid text-center intro" >
-        <!-- Top content -->
-          <div class="top-content">
-
-              <div class="inner-bg">
-                  <div class="container">
-
-                      <div class="row">
-                          <div class="col-sm-8 col-sm-offset-2 text">
-                              <h1><strong>Bootstrap</strong> Login &amp; Register Forms</h1>
-                              <div class="description">
-                                <p>
-                                  This is a free responsive <strong>"login and register forms"</strong> template made with Bootstrap.
-                                  Download it on <a href="http://azmind.com" target="_blank"><strong>AZMIND</strong></a>,
-                                  customize and use it as you like!
-                                </p>
-                              </div>
-                          </div>
-                      </div>
-
-                      <div class="row">
-                          <div class="col-sm-5" style="float:right">
-                            <div class="form-box">
-                                <div class="form-top">
-                                    <div class="form-top-left">
-                                      <h3>Login to our site</h3>
-                                        <p>Enter username and password to log on:</p>
-                                    </div>
-                                    <div class="form-top-right">
-                                      <i class="fa fa-lock"></i>
-                                    </div>
-                                </div>
-                                <div class="form-bottom">
-                                  <!-- formulaire connexion -->
-                                  <form role="form" action="" method="post" class="login-form">
-                                    <div class="form-group">
-                                      <label class="sr-only" for="username">PSEUDO*</label>
-
-                                      <!-- Affichage des message d'erreur si les cntraintes ne sont pas respectée -->
-                                      <span class="error"><?php if(!empty($error['username'])) { echo $error['username']; } ?></span>
-
-                                      <!--  champ pseudo -->
-
-                                      <input type="text" name="username" id="username" placeholder="Pseudo"class="form-control" value="<?php if(!empty($_POST['username'])) { echo $_POST['username']; } ?>"/>
-                                    </div>
-
-                                      <!-- champ password -->
-                                      <div class="form-group">
-
-                                        <label class="sr-only" for="form-password">Password</label>
-
-                                         <!--Affichage des message d'erreur si les cntraintes ne sont pas respectées-->
-                                        <span class="error"><?php if(!empty($error['password'])) { echo $error['password']; } ?></span>
-
-                                        <input type="password" name="password" placeholder="Mot de passe" class="form-password form-control" id="password" value="<?php if(!empty($_POST['password'])) { echo $_POST['password']; } ?>">
-                                      </div>
-                                      <a href="<?php echo $this->url("forget"); ?>">Mot de passe oublié ?</a>
-                                      <input type="checkbox" name="souvenir" /><label>Se souvenir de moi</label><br />
-                                      <input type="submit" name="submit" class="btn " value="Connexion" />
-                                      <input type="submit" name="submit" class="btn " value="Deconnexion" />
-                                      <!-- boutton envoi vormulaire -->
-                                      <button type="submit" class="btn">Sign in!</button>
-                                      <br><p>pas encore membre ? <br> <a href="">Sign up!</a></p>
-                                  </form>
-                                  </div>
-                            </div>
-<section class="mainWrapper">
-  <div class="titreCentre">
-    <h1>Connexion</h1>
-  </div>
-
-  <!-- Formulaire -->
-  <form action="" method="POST" id="formulaire">
-    <div class="form-group">
-      <label for="username">Pseudo *</label>
-      <!--Affichage des message d'erreur si les contraintes ne sont pas respectées-->
-      <span class="error"><?php if(!empty($error['username'])) { echo $error['username']; } ?></span>
-      <input type="text" name="username" id="username" class="form-control" value="<?php if(!empty($_POST['username'])) { echo $_POST['username']; } ?>" />
+<section class="loginWrapper">
+  <section class="mainWrapper">
+    <div class="titreCentre">
+      <h1>Connexion</h1>
+      <p>Connectez vous pour acceder au site.</p>
     </div>
 
-    <div class="form-group">
-        <label for="password">Mot de passe *</label>
+    <!-- Formulaire -->
+    <form action="" method="POST" id="formulaire">
+
+      <div class="form-group">
+        <label for="username">Pseudo *</label><br>
+        <!--Affichage des message d'erreur si les contraintes ne sont pas respectées-->
+        <span class="error"><?php if(!empty($error['username'])) { echo $error['username']; } ?></span>
+        <input type="text" name="username" id="username" class="form-control" value="<?php if(!empty($_POST['username'])) { echo $_POST['username']; } ?>" />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Mot de passe *</label><br>
         <!--Affichage des message d'erreur si les contraintes ne sont pas respectées-->
         <span class="error"><?php if(!empty($error['password'])) { echo $error['password']; } ?></span>
         <input type="password" name="password" id="password" class="form-control" value="<?php if(!empty($_POST['password'])) { echo $_POST['password']; } ?>" />
+
+        <input class="bouton boutonVert" type="submit" name="submit" value="Connexion" />
       </div>
 
-      <a class="lienTxt" href="<?php echo $this->url("forget");?>">Mot de passe oublié ?</a><br>
+      <!-- Texte et bouton centrés -->
+      <div class="titreCentre">
+      <input type="checkbox" name="souvenir" /><label>Se souvenir de moi</label><br>
+        <a class="lienTxt" href="<?php echo $this->url("register");?>">Pas encore de compte ?</a><br>
+      </div>
+    </form>
+  </section>
 
+  <div id="container" class="imgLogin">
+    <div class="img-container">
+        <div class="titreCentre positioning">
+          <h1>Bienvenue sur le site d'Animals</h1>
+          <p>lorem ipsumzo nfofur mofireng, meoln emorgnl eq,vjern emrogiunae ùrmogia ngjorengl reijgnmr lergj naepr meroirnj moerinl g,</p>
+          <input class="bouton boutonVert" type="submit" name="submit" value="Inscription" />
+        </div>
+        <img src="http://placehold.it/1920x700" />
+    </div>
+</div>
 
-      <input type="checkbox" name="souvenir" /><label>Se souvenir de moi</label><br />
-      <input class="bouton boutonVert" type="submit" name="submit" value="Connexion" />
-  </form>
+<div class="titreCentre titreCentreWide">
+  <h2>Fonctionnement</h2>
+  <div class="mainWrapper fonctionnementLogin">
+    <div class="">
+      <i class="fa fa-search fa-5x" aria-hidden="true"></i>
+      <p>Etape</p>
+    </div>
+
+    <i class="fa fa-arrow-right fa-2x" aria-hidden="true"></i>
+
+    <div class="">
+      <i class="fa fa-list-ul fa-5x" aria-hidden="true"></i>
+      <p>Etape</p>
+    </div>
+
+    <i class="fa fa-arrow-right fa-2x" aria-hidden="true"></i>
+
+    <div class="">
+      <i class="fa fa-smile-o fa-5x" aria-hidden="true"></i>
+      <p>Etape</p>
+    </div>
+  </div>
+
+  <input class="bouton boutonVert" type="submit" name="submit" value="Inscription" /><br>
+  <i class="fa fa-arrow-circle-down fa-3x" aria-hidden="true"></i>
+</div>
+
+<div class="titreCentre">
+  <h2>Equipe</h2>
+</div>
+
+<div class="titreCentre">
+  <h2>Contact</h2>
+</div>
+
 </section>
 
-                          </div>
-                      </div>
 
-                  </div>
-              </div>
-
-          </div>
-
-        </div>
-      </section>
-
-       <?php $this->stop('main_content') ?>
+<?php $this->stop('main_content') ?>

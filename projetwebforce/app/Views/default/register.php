@@ -1,6 +1,6 @@
 <?php
 
-$this->layout('layout', ['title' => 'register']) ?>
+$this->layout('layout', ['title' => 'Inscription']) ?>
 
 <?php $this->start('main_content') ?>
 
@@ -9,6 +9,7 @@ $this->layout('layout', ['title' => 'register']) ?>
   <div class="mainWrapper">
     <div class="titreCentre">
       <h1>Inscription</h1>
+      <p>Si vous n'avez pas encore de compte, inscrivez vous!</p>
     </div>
 
 
@@ -45,7 +46,7 @@ $this->layout('layout', ['title' => 'register']) ?>
                   //print_r($departements);
                  foreach ($departements as $departement) {
                 ?>
-                <option value="<?php echo $departement['idep']?>"> <?php echo $departement['nom'] ?>" </option>
+                <option value="<?= $departement['idep']?>"> <?= $departement['nom'] ?>" </option>
                 <?php } ?>
 
           </select>
@@ -69,11 +70,12 @@ $this->layout('layout', ['title' => 'register']) ?>
              <label for="password2">Confirmation du mot de passe *</label>
              <!--Affichage des message d'erreur si les contraintes ne sont pas respectées-->
              <span class="error"><?php if(!empty($error['password2'])) { echo $error['password2']; } ?></span>
-             <input type="text" name="password2" id="password2" class="form-control" value="<?php if(!empty($_POST['password2'])) { echo $_POST['password2']; } ?>" />
+             <input type="password" name="password2" id="password2" class="form-control" value="<?php if(!empty($_POST['password2'])) { echo $_POST['password2']; } ?>" />
          </div>
-
-         <input class="bouton boutonVert" type="submit" name="submit" value="Inscription" />
-     </form>
+         <div class="titreCentre">
+           <input class="bouton boutonVert" type="submit" name="submit" value="Inscription" />
+         </div>
+       </form>
 </div>
 
 <?php $this->stop('main_content') ?>

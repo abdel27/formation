@@ -32,7 +32,7 @@
             <td><?= $post['email']; ?></td>
             <td><?= $post['role']; ?></td>
             <td><?= $post['active']; ?></td>
-
+            
             <!-- Boutons gestion utilisateurs -->
             <td><a href="<?php $id=$post['id']; echo $this->url("edituser", ["id" => $id]);?>"><button class="boutonBleu" type="button" name="button"><i class="fa fa-pencil" aria-hidden="true"></i></button></a></td>
             <td><a href="#"><button class="boutonOrange" type="button" name="button"><i class="fa fa-times" aria-hidden="true"></i></button></a></td>

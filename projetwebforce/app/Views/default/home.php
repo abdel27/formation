@@ -4,6 +4,7 @@
 
 <!-- Section recherche -->
 <section class="fullWidthHome">
+	<h2>Rechercher sur le site</h2>
 	<div class="labelRecherche">
 		<label for="espece">Espèce</label>
 		<label for="race">Race</label>
@@ -20,14 +21,13 @@
 	</div>
 </section>
 
-<!-- Bloc principal de page -->
-
-  <!-- Bloc contenant toutes les annonces -->
+  <!-- Bloc principal contenant toutes les annonces -->
   <div class="homeWrapper">
+		<?php foreach ($annonces as $annonce) { ?>
     <article class="annonceHome">
-      <img src="http://placehold.it/360x180" alt="" />
+      <img src="http://placehold.it/720x360" alt="" />
       <div class="texteAnnonceHome">
-        <h3><a class="lienTitle" href="<?= $this->url("default_home");?>">Nom de l'animal</a></h3>
+        <h3><a class="lienTitle" href="#"><?= $annonce['nom']; ?></a></h3>
         <div class="descriptionAnnonce">
           <div class="boldAnnonce">
             <p class="txtBold">Espèce</p>
@@ -36,17 +36,18 @@
             <p class="txtBold">Sexe</p>
           </div>
           <div class="LightAnnonce">
-            <p>Espèce</p>
-            <p>Race</p>
+            <p><?= $annonce['idespece']; ?></p>
+            <p><?= $annonce['idrace']; ?></p>
             <p>Age</p>
             <p>Sexe</p>
           </div>
         </div>
       </div>
     </article>
+		<?php } ?>
 
     <article class="annonceHome">
-      <img src="http://placehold.it/360x180" alt="" />
+      <img src="http://placehold.it/720x360" alt="" />
       <div class="texteAnnonceHome">
         <h3><a class="lienTitle" href="#">Nom de l'animal</a></h3>
         <div class="descriptionAnnonce">
@@ -66,68 +67,27 @@
       </div>
     </article>
 
-    <article class="annonceHome">
-      <img src="http://placehold.it/360x180" alt="" />
-      <div class="texteAnnonceHome">
-        <h3><a class="lienTitle" href="#">Nom de l'animal</a></h3>
-        <div class="descriptionAnnonce">
-          <div class="boldAnnonce">
-            <p class="txtBold">Espèce</p>
-            <p class="txtBold">Race</p>
-            <p class="txtBold">Age</p>
-            <p class="txtBold">Sexe</p>
-          </div>
-          <div class="LightAnnonce">
-            <p class="txtAnnonce">Espèce</p>
-            <p class="txtAnnonce">Race</p>
-            <p class="txtAnnonce">Age</p>
-            <p class="txtAnnonce">Sexe</p>
-          </div>
-        </div>
-      </div>
-    </article>
+		<article class="annonceHome">
+			<img src="http://placehold.it/720x360" alt="" />
+			<div class="texteAnnonceHome">
+				<h3><a class="lienTitle" href="#">Nom de l'animal</a></h3>
+				<div class="descriptionAnnonce">
+					<div class="boldAnnonce">
+						<p class="txtBold">Espèce</p>
+						<p class="txtBold">Race</p>
+						<p class="txtBold">Age</p>
+						<p class="txtBold">Sexe</p>
+					</div>
+					<div class="LightAnnonce">
+						<p class="txtAnnonce">Espèce</p>
+						<p class="txtAnnonce">Race</p>
+						<p class="txtAnnonce">Age</p>
+						<p class="txtAnnonce">Sexe</p>
+					</div>
+				</div>
+			</div>
+		</article>
 
-    <article class="annonceHome">
-      <img src="http://placehold.it/360x180" alt="" />
-      <div class="texteAnnonceHome">
-        <h3><a class="lienTitle" href="#">Nom de l'animal</a></h3>
-        <div class="descriptionAnnonce">
-          <div class="boldAnnonce">
-            <p class="txtBold">Espèce</p>
-            <p class="txtBold">Race</p>
-            <p class="txtBold">Age</p>
-            <p class="txtBold">Sexe</p>
-          </div>
-          <div class="LightAnnonce">
-            <p class="txtAnnonce">Espèce</p>
-            <p class="txtAnnonce">Race</p>
-            <p class="txtAnnonce">Age</p>
-            <p class="txtAnnonce">Sexe</p>
-          </div>
-        </div>
-      </div>
-    </article>
-
-    <article class="annonceHome">
-      <img src="http://placehold.it/360x180" alt="" />
-      <div class="texteAnnonceHome">
-        <h3><a class="lienTitle" href="#">Nom de l'animal</a></h3>
-        <div class="descriptionAnnonce">
-          <div class="boldAnnonce">
-            <p class="txtBold">Espèce</p>
-            <p class="txtBold">Race</p>
-            <p class="txtBold">Age</p>
-            <p class="txtBold">Sexe</p>
-          </div>
-          <div class="LightAnnonce">
-            <p class="txtAnnonce">Espèce</p>
-            <p class="txtAnnonce">Race</p>
-            <p class="txtAnnonce">Age</p>
-            <p class="txtAnnonce">Sexe</p>
-          </div>
-        </div>
-      </div>
-    </article>
   </div>
 
 <?php $this->stop('main_content') ?>

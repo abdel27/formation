@@ -33,7 +33,7 @@
 	['POST','/lienspasswordaction','Default#lienspasswordaction', 'lienspasswordaction'],
 
 	// Page annonce unique
-	['GET','/detail','Default#detail', 'detail'],
+	['GET','/detail/[:id]','Default#detail', 'detail'],
 
 	//Page profil utilisateur
 	['GET','/profil','Default#profiluser', 'profiluser'],
@@ -52,7 +52,7 @@
 	// Gestion des utilisateurs
   ['GET','/manageuser','Default#manageuser', 'manageuser'],
 
-  
+	// Edition des utilisateurs
   ['GET','/edituser/[:id]','Default#edituser', 'edituser'],
   ['POST','/edituser','Default#edituseraction', 'edituseraction'],
   ['GET','/deleteuser/[:id]','Default#deleteuser', 'deleteuser'],
@@ -64,5 +64,6 @@
 
 	// Autorisation des annonces
 	['GET','/postannonce','Default#postannonce', 'postannonce'],
+
 
 	);

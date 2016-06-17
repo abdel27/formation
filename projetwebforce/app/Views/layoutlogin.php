@@ -32,36 +32,28 @@
 			 </div>
 
 			<ul class="nav navbar-nav navbar-right">
-			 	<li><a href="<?= $this->url("default_home");?>">Consulter les offres</a></li>
-			 	<li><a href="<?= $this->url("newannonce");?>">Ajouter des offres</a></li>
-			 	<li><a href="<?= $this->url("register");?>"> S'inscrire</a></li>
-			 	<li><a href="<?= $this->url("login");?>"> Se connecter</a></li>
-			 	<li><a href="<?= $this->url("profiluser");?>"> Mon profil</a></li>
+			 	<li><a href="">Fonctionnement</a></li>
+			 	<li><a href="">Equipe</a></li>
+			 	<li><a href="">Nous contacter</a></li>
 		 	</ul>
 		</header>
 
 
 		<!-- WRAPPER ET CONTENT -->
-		<section class="mainContainer">
-			<section>
+
 					<?= $this->section('main_content') ?>
-			</section>
-		</section>
 
 
 		<!-- FOOTER -->
 		<footer>
 			<nav>
 				<ul>
-					<li><a href="<?= $this->url("default_home");?>">Consulter les offres</a></li>
-					<li><a href="<?= $this->url("newannonce");?>">Ajouter des offres</a></li>
-					<li><a href="<?= $this->url("register");?>"> S'inscrire</a></li>
-					<li><a href="<?= $this->url("login");?>"> Se connecter</a></li>
+          <li><a href="">Fonctionnement</a></li>
+  			 	<li><a href="">Equipe</a></li>
+  			 	<li><a href="">Nous contacter</a></li>
 				</ul>
 
 				<h2>Animals</h2>
-
-				<a href="<?= $this->url("contact");?>">Nous contacter</a>
 			</nav>
 		</footer>
 

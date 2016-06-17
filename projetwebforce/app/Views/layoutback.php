@@ -16,9 +16,9 @@
   <!-- Fonts -->
   <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 </head>
-<body>
-  <div class="container">
-    <header>
+  <body>
+    <div class="container">
+      <header>
         <!-- Menu haut de page -->
         <nav class="navTopRight">
           <ul>
@@ -60,6 +60,6 @@
       <?= $this->section('main_content') ?>
     </section>
 
-  </div>
-</body>
+    </div>
+  </body>
 </html>

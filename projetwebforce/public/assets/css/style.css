@@ -22,6 +22,7 @@ h1, h2, h3, h4{
 
 p{
 	font-family: 'Droid Serif', serif;
+	font-weight: 400;
 	color: #272F32;
 }
 
@@ -60,11 +61,14 @@ a:hover{ text-decoration: none; color: white; }
 	color: #C10000;
 }
 
+.error{
+	color: red;
+}
+
 
 
 /* Boutons */
 
-/* Bouton de validation */
 .bouton, button{
 	font-family: 'Montserrat', helvetica, sans-serif;
 	color: white;
@@ -113,13 +117,16 @@ nav,
 .contentAnnonce,
 .contentUser,
 .imageAnnonce,
-.descriptionAnnonce,
 .homeWrapper
 {
 	display: flex;
+
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1180px;
 }
 
-/* Blocs ombrés */
+/* Blocs blancs avec ombre */
 .mainWrapper,
 .detailAnnonce,
 .fullWidthHome,
@@ -134,9 +141,6 @@ nav,
 .mainContainer{
 	justify-content: center;
 
-	width: 100%;
-	max-width: 1180px;
-	margin: 0 auto;
 	padding: 0 20px;
 }
 
@@ -146,39 +150,68 @@ nav,
 	margin: 40px auto;
 	background: white;
 	padding: 20px;
+}
+
+.imageAnnonce{
+	flex-grow: 4;
+
+	margin-right: 20px;
+	max-width: 720px;
+}
+
+.formCentre{
+	width: 40%;
+	margin: 0 auto;
+}
+
+.googleMap{
+	width: 100%;
+	height: 350px;
 	margin: 0 auto;
 }
 
 
-.imageAnnonce{
-	flex-grow: 6;
-
-	margin-right: 20px;
-}
 
 /* PROFIL USER */
 /*Bloc identité user */
 .contentUser {
+	display: flex;
 	background: white;
-	height: 215px;
-	max-width: 1180px;
+	padding: 0;
+	margin:0 auto 20px;
+}
+
+.titreUser{
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
 	width: 100%;
-	margin-bottom: 20px;
 }
 
 .imageUser {
 	width: 215px;
 	height: 215px;
-	margin-right: 20px;
 }
 
 .user {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: stretch;
 	width: 90%;
-	margin-top: 20px;
+	padding: 20px;
 }
 
+
 .nomUser {
+	display: flex;
+
+	width: 100%;
 	margin-top: 30px;
+}
+
+.nomUserInfo{
+	width: 33%;
+	max-width: 400px;
 }
 
 .nomUser li {
@@ -188,16 +221,22 @@ nav,
 }
 
 .glyphicon, .glyphicon-cog {
-	width: 10%;
 	font-size: 2em;
-	margin-top: 20px;
+	color: #CCCCCC;
+
+	transition: .3s;
 }
 
-/* Bloc description détaillée de l'annonce*/
+.glyphicon:hover, .glyphicon-cog:hover {
+	color: #4A90E2;
+	cursor: pointer;
+}
+
+/* Bloc description détaillée de l'annonce */
 .detailAnnonce {
 	background: white;
 	border-radius: 4px;
-	/*max-*/width: 48%;
+	max-width: 48%;
 	margin: 20px 1%;
 }
 
@@ -205,38 +244,33 @@ nav,
 	width: 100%;
 }
 
+
+
 /* Blocs texte */
-
-/* Annonce unique */
-.descriptionAnnonce{
-	flex-grow: 4;
-
-	width: 40%;
-}
 
 /* bloc titre centré */
 .titreCentre{
 	display: block;
 	text-align: center;
 	width: 100%;
+	font-weight: 700;
 	margin: 20px 0 40px 0;
 }
 
-/* Titre annonce */
-.titreCentre h2{
-	font-weight: 700;
+
+.texteAnnonceHome .titreCentre{
+	margin-bottom: 0;
 }
-/* Sous titre annonce*/
+
+/* Sous titre */
 .titreCentre p{
 	width: 80%;
-	margin: 0 auto;
+	margin: 20px auto;
 }
 
-/* Texte gras annonce */
+/* Bloc texte gras annonce */
 .boldAnnonce{
 	flex-grow: 1;
-
-	margin-right: 20px;
 }
 
 .txtBold{
@@ -245,7 +279,7 @@ nav,
 
 /* Texte light annonce */
 .LightAnnonce{
-	flex-grow: 2;
+	flex-grow: 3;
 }
 
 
@@ -275,8 +309,11 @@ nav,
 	padding: 5%;
 }
 
-.texteAnnonceHome h3{
-	padding-bottom: 5%;
+.descriptionAnnonce{
+	display: flex;
+
+	width: 100%;
+	padding-top: 20px;
 }
 
 
@@ -304,6 +341,90 @@ nav,
 	width: 19.5%;
 	margin: 0 auto;
 	border: 1px solid lightgrey;
+}
+
+
+/* Page de login */
+.loginWrapper{
+	background: white;
+	max-width: 1920px;
+	margin: 0 auto;
+}
+
+.loginWrapper .mainWrapper{
+	box-shadow: none;
+}
+
+.loginWrapper .mainWrapper .form-group{
+	width: 30%;
+}
+
+.imgLogin img{
+	width: 100%;
+}
+
+.blocImgLogin{
+	position: absolute;
+}
+
+.imgLogin{
+	display: flex;
+
+  width: 100%;
+  min-width: 230px;
+  background-color: #aaa;
+  text-align: center;
+}
+.imgLogin img {
+  max-width: 100%;
+}
+.img-container {
+  display: flex;
+
+	align-items: center;
+	justify-content: center;
+
+
+  position: relative;
+}
+.positioning{
+  position: absolute;
+
+  background-color: white;
+	padding: 20px;
+	width: 50%;
+	height: 50%;
+}
+
+.fonctionnementLogin{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin: 10% auto;
+
+}
+
+.titreCentreWide{
+	height: 100vh;
+}
+
+.fa-search,
+.fa-arrow-right,
+.fa-list-ul,
+.fa-smile-o{
+	color: #CCCCCC;
+}
+
+.fa-arrow-circle-down{
+	margin: 20px;
+	color: #CCCCCC;
+
+	transition: .3s;
+}
+
+.fa-arrow-circle-down:hover{
+	color: #C10000;
+	cursor: pointer;
 }
 
 

@@ -134,6 +134,7 @@
         </div>
      
         <input type="submit" name="submit" class="btn btn-primary" value="Modifier" />
+        <a class="boutonSupprimer" href="<?php $id=$user['id']; echo $this->url("edituser", ["id" => $id]);?>"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
         
     </form>
 
