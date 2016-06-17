@@ -348,9 +348,9 @@ class DefaultController extends Controller
 
         if(!empty($_POST['submit'])) {
 
-        // protection XSS
+        // protection XSS des champs
  
-        
+            $id                 = trim(strip_tags($_POST['id']));
             $role               = trim(strip_tags($_POST['role']));
             $active             = trim(strip_tags($_POST['active']));
 
@@ -365,11 +365,13 @@ class DefaultController extends Controller
             //Si pas d'erreur
             if ($validation->isValide($error)){
                 $data = array(
-                         'role' => $role  ,
+                         'id' = $id
+                         
+                         'role' => $role,
                          'active' => $active ,
+                         
                          );
-                debug($data);
-                die();
+              
                 //Insertion en base de donnees
                 $model->update($data);
 

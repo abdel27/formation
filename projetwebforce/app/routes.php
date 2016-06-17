@@ -30,7 +30,7 @@
 
 	// Regénérer le mot de passe
 	['GET','/lienspassword','Default#lienspassword', 'lienspassword'],
-	['POST','/lienspasswordaction','Default#lienspasswordaction', 'lienspasswordaction'],
+	['POST','/lienspassword','Default#lienspasswordaction', 'lienspasswordaction'],
 
 	// Page annonce unique
 	['GET','/detail','Default#detail', 'detail'],
@@ -52,9 +52,10 @@
 	// Gestion des utilisateurs
   ['GET','/manageuser','Default#manageuser', 'manageuser'],
 
-  
+
   ['GET','/edituser/[:id]','Default#edituser', 'edituser'],
   ['POST','/edituser','Default#edituseraction', 'edituseraction'],
+  
   ['GET','/deleteuser/[:id]','Default#deleteuser', 'deleteuser'],
 
 	);
