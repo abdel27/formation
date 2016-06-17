@@ -8,26 +8,13 @@
 <table class="table">
     <thead>
       <tr>
-        <th>Identifiant</th>
+        <th>#</th>
         <th>Nom</th>
         <th>Prenom</th>
         <th>Pseudo</th>
-        <th>Date de naissance</th>
         <th>Email</th>
-        <th>Password</th>
-        <th>Token</th>
-        <th>IP</th>
-        <th>Date de creation</th>
-        <th>Departement</th>
         <th>Role</th>
-        <th>Active</th>
-        <th>Derniere conncetion</th>
-        <th>Situation</th>
-        <th>Adresse</th>
-        <th>Code postal</th>
-        <th>Telephone</th>
-        <th>Ville</th>
-
+        <th>Active</th>    
         <th>Modifier</th>
         <th>Bloquer</th>
         <th>Supprimer</th>
@@ -42,22 +29,10 @@
             <td><?= $post['nom']; ?></td>
             <td><?= $post['prenom'];?></td>
             <td><?= $post['username']; ?></td>
-            <td><?= $post['date_naissance']; ?></td>
             <td><?= $post['email']; ?></td>
-            <td><?= $post['password']; ?></td>
-            <td><?= $post['token']; ?></td>
-            <td><?= $post['ip']; ?></td>
-            <td><?= $post['created_at']; ?></td>
-            <td><?= $post['departement']; ?></td>
             <td><?= $post['role']; ?></td>
             <td><?= $post['active']; ?></td>
-            <td><?= $post['last_connection']; ?></td>
-            <td><?= $post['situation']; ?></td>
-            <td><?= $post['adresse']; ?></td>
-            <td><?= $post['codepostal']; ?></td>
-            <td><?= $post['tel']; ?></td>
-            <td><?= $post['city']; ?></td>
-
+            
             <!-- Boutons gestion utilisateurs -->
             <td><a class="boutonModifer" href="<?php $id=$post['id']; echo $this->url("edituser", ["id" => $id]);?>"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
             <td><a class="boutonBloquer" href="#"><i class="fa fa-user-times" aria-hidden="true"></i></a></td>

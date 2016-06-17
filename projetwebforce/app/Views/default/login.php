@@ -1,12 +1,16 @@
 
 <?php
 
-$this->layout('layoutback', ['title' => 'login']) ?>
+$this->layout('layout', ['title' => 'login']) ?>
 
 <?php $this->start('main_content') ?>
 <?php
 print_r($_SESSION);
 ?>
+
+
+
+                            
 
 <section class="mainWrapper">
   <div class="titreCentre">
@@ -29,19 +33,11 @@ print_r($_SESSION);
         <input type="password" name="password" id="password" class="form-control" value="<?php if(!empty($_POST['password'])) { echo $_POST['password']; } ?>" />
       </div>
 
-       
-        
-       
-        
-
-
       <a class="lienTxt" href="<?php echo $this->url("forget");?>">Mot de passe oublié ?</a><br>
 
 
       <input type="checkbox" name="souvenir" /><label>Se souvenir de moi</label><br />
       <input class="bouton boutonVert" type="submit" name="submit" value="Connexion" />
   </form>
-</section>
 
-
- <?php $this->stop('main_content') ?>
+       <?php $this->stop('main_content') ?>

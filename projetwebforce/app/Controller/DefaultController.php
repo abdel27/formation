@@ -130,17 +130,24 @@ class DefaultController extends Controller
 
     }
 
-    //Methode qui permet de recuperer un membre en fonction de son ID
+    //Methode qui permet de recuperer un membre et un departement en fonction de son ID
     public function edituser($id) {
         //Instance de la class USerModel
         $model = new UserModel();
         $user = $model->find($id);
-        debug($user);
+        //debug($user);
+        //$this->show('default/edituser');
+        //$this->show('default/edituser' , );
+        //$this->show('default/edituser' , array('user' => $user));
         //Instance de la class Departement
         $all = new DepartementModel();
         $departements = $all->findAll();
-        //debug($departement);
-        $this->show('default/edituser' , ['id' => $id], array('departement' => $departements));
+        //debug($departements);
+        
+        $this->show('default/edituser' , array(
+            'departements' => $departements,
+            'user' => $user
+        ));
   
   
     } 
@@ -288,8 +295,13 @@ class DefaultController extends Controller
                 //Generation d'un token de maniere aleatoire
                 $token = $validation->generateRandomString(50);
 
-                $error['username']  = $validation->checkValidation($username,'username',3,40);
+
+                $error['nom']  = $validation->checkValidation($username,'nom',3,40);
+                $error['prenom']  = $validation->checkValidation($username,'prenom',3,40);
                 $error['email']   = $validation->validateMail($email,80);
+                $error['username']  = $validation->checkValidation($username,'username',3,40);
+                $error['departement']  = $validation->checkValidation($departement,'departement',1,100);
+                $error['prenom']  = $validation->checkValidation($username,'prenom',3,40);
                 $error['password'] = $validation->testPassword($password,$password2,8);
                 //Si pas d'erreur
                 if ($validation->isValide($error)){
@@ -327,6 +339,7 @@ class DefaultController extends Controller
     }
 
     //Methode de deconnexion du memnbre
+
     public function logout() 
     {
         $logout = new AuthentificationModel();
@@ -343,12 +356,58 @@ class DefaultController extends Controller
         $this->show('default/deleteannonce' , ['id' => $id]);
     }
 
+
     //Méthode pour récupérer tous les détails d'une annonce
     public function detail() {
         //Instancier la classe AnnonceModel
         $all = new AnnonceModel();
         $details = $all->findAll();
         $this->show('default/detail', array('details' => $details));
+
+    public function edituseraction($id) {
+
+        if(!empty($_POST['submit'])) {
+
+        // protection XSS des champs
+ 
+            $id                 = trim(strip_tags($_POST['id']));
+            $role               = trim(strip_tags($_POST['role']));
+            $active             = trim(strip_tags($_POST['active']));
+
+            $validation = new Validation();
+
+
+            $error['role']    = $validation->checkValidation($role,'role',3,5);
+            $error['active']  = $validation->checkValidation($active,'active',2,3);
+
+            $model = new UserModel();
+
+            //Si pas d'erreur
+            if ($validation->isValide($error)){
+                $data = array(
+                         'id' = $id
+                         
+                         'role' => $role,
+                         'active' => $active ,
+                         
+                         );
+              
+                //Insertion en base de donnees
+                $model->update($data);
+
+                // redirection vers le listing admin des articles 
+                $this->redirectToRoute('dashboard');
+            } else {
+
+                // show formulaire avec les error
+                //$this->show('default/dashboard' , array('error' => $error));
+                //$this->redirectToRoute('dashboard');
+                //$this->show('default/edituser'); 
+                $this->redirectToRoute('dashboard');
+            }
+        }
+    }
+
 
 
     }
