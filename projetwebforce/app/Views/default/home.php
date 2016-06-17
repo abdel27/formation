@@ -3,6 +3,9 @@
 <?php $this->start('main_content') ?>
 
 <!-- Section recherche -->
+<?php
+w_user;
+?>
 <section class="rechercheHome">
 	<div class="labelRecherche">
 		<label for="espece">Espèce</label>
