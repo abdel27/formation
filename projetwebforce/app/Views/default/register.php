@@ -45,7 +45,7 @@ $this->layout('layout', ['title' => 'register']) ?>
           <!--Affichage des message d'erreur si les cntraintes ne sont pas respectées
           <span class="error"><?php if(!empty($error['departement'])) { echo $error['departement']; } ?></span>
           <input type="text" name="departement" id="departement" class="form-control" value="<?php if(!empty($_POST['departement'])) { echo $_POST['departement']; } ?>" />-->
-          <select>
+          <select name='departement' selected='selected'>
                 <option></option>
                 <?php
                   //print_r($departements);

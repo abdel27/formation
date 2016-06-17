@@ -124,6 +124,7 @@ class DefaultController extends Controller
 
     //Methode qui recupere tout les membres
      public function manageuser() {
+
         $all = new UserModel();
         $users = $all->findAll();
         $this->show('default/manageuser', array('users' =>$users));
@@ -177,18 +178,40 @@ class DefaultController extends Controller
             //Validation du email
             $validation = new Validation();
             $error['email']   = $validation->validateMail($email,80);
+            //tester si l'email est present dans la base de données
+            $model = new UserModel();
+            $model->emailExists($email);
+            
+
             if($validation->isValide($error)){
-                //Instance da la class UserModel
-                $model = new UserModel();
-                $user = $model->findEmailToken();
-                //print_r($user);
-                //die();
-                $this->show('default/lienspassword', array('error' =>$error));
+                //Si email bien present dans BDD
+                if($model->emailExists($email)){
+                    
+                    //print_r($user);
+                    //die();
+                    $model = New UserModel();
+                    $user = $model->findEmailToken($email);
+                    $this->redirectToRoute('lienspassword' , ['user' => $user]);
+                    
+                        
+                } else {
+                    $error['email'] = 'Votre email est inconnu , veuillez saisir un email correst';
+                    $this->show('default/forget' , array('error' => $error));
+                }
+            }
+        }
 
     }
-  }
 
-}
+
+
+    //Methode qui renvoi vers la page liens password
+    public function lienspassword() {
+         
+         $this->show('default/lienspassword');// , array('user' => $user));
+
+
+    }
 
 
 
@@ -199,7 +222,7 @@ class DefaultController extends Controller
     }
 
     //Methode pour modifier le mot de passe
-    public function passwormodifaction() {
+    public function passwordmodifaction() {
 
         if(!empty($_POST['submit'])) {
             //Protection XXS
@@ -265,7 +288,7 @@ class DefaultController extends Controller
                     //Si connexion OK redirection
                     $this->redirectToRoute('dashboard');
                 }
-            } else {
+            }   else {
                 // Sinon redirection vers formulaire de connexion avec les error
                 $this->show('default/login' , array('error' => $error)); 
             }
@@ -358,11 +381,13 @@ class DefaultController extends Controller
 
 
     //Méthode pour récupérer tous les détails d'une annonce
-    public function detail() {
+    public function detail($id) {
         //Instancier la classe AnnonceModel
         $all = new AnnonceModel();
-        $details = $all->findAll();
+        $details = $all->find($id);
         $this->show('default/detail', array('details' => $details));
+
+    }
 
     public function edituseraction($id) {
 
@@ -385,7 +410,7 @@ class DefaultController extends Controller
             //Si pas d'erreur
             if ($validation->isValide($error)){
                 $data = array(
-                         'id' = $id
+                         'id' => $id,
                          
                          'role' => $role,
                          'active' => $active ,
@@ -393,10 +418,11 @@ class DefaultController extends Controller
                          );
               
                 //Insertion en base de donnees
-                $model->update($data);
+                $model->update($data , $id);
 
                 // redirection vers le listing admin des articles 
-                $this->redirectToRoute('dashboard');
+                //$this->redirectToRoute('dashboard');
+                $this->show('default/edituser');
             } else {
 
                 // show formulaire avec les error
@@ -411,7 +437,7 @@ class DefaultController extends Controller
 
 
     }
-}
+
 
 
 

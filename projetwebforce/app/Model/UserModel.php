@@ -11,25 +11,11 @@ class UserModel extends BaseUser
 
 {
   
-private $id;
-private $nom;
-private $prenom;
-private $username;
-private $date_naissance;
+
 private $email;
 private $password;
 private $token;
-private $ip;
-private $created_at;
-private $departement;
-private $role;
-private $active;
-private $last_connection;
-private $situation;
-private $adresse;
-private $codepostal;
-private $tel;
-private $city;
+
 
 
 //Pour stocker les messages d'erreurs
@@ -39,17 +25,29 @@ private $error;
 
 
 
+
+
+
 //Fonction pour recuperer le mail et le token
 
 public function findEmailToken() {
 
-  $sql = "SELECT email, token FROM user WHERE email = :email";
+  $app = getApp();
+  $dbh = ConnectionModel::getDbh();
 
-          $stmt = $dbh->prepare($sql);
-          $stmt->bindValue(':email',$email, PDO::PARAM_STR);
-          $stmt->execute();
-          $user = $stmt->fetch();
+
+  $sql = "SELECT email, token FROM user WHERE email = $email";
+
+          $sth = $dbh->prepare($sql);
+          if($sth->execute()){
+          $user = $sth->fetchAll();
+          if($user){
           return $user;
+      }
+    }
+
+    return false;
+          
 
 }
 
@@ -57,7 +55,7 @@ public function findEmailToken() {
 
 public function countUser() {
 
-  $sql = "SELECT COUNT() FROM user";
+  $sql = "SELECT COUNT(*) FROM user";
           $stmt = $dbh->prepare($sql);
           $stmt->execute();
           $count = $stmt->fetch();
@@ -68,7 +66,7 @@ public function countUser() {
 
 public function banUser() {
 
-  $sql = "SELECT COUNT() FROM user WHERE active = 'no'";
+  $sql = "SELECT COUNT(*) FROM user WHERE active = 'no'";
           $stmt = $dbh->prepare($sql);
           $stmt->execute();
           $count = $stmt->fetch();

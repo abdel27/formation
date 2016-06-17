@@ -6,11 +6,11 @@
 <section class="mainWrapper">
   <!-- Titre -->
   <div class="titreCentre">
-    <h2>Nom de l'animal</h2>
+  <?php foreach ($details as $detail) {?>
+  
+    <h2><? echo $detail['nom']; ?></h2>
     <!-- Sous titre / Description -->
-    <p class="txtAnnonce">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+    <p class="txtAnnonce"> <?php echo $detail['description'] ;?> </p><?php }?>
   </div>
 
   <!-- Contenu -->
@@ -28,8 +28,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <p class="txtBold">Age :</p>
         <p class="txtBold">Sexe :</p>
         <p class="txtBold">LOF :</p>
-        <p class="txtBold">Activités :</p>
-        <p class="txtBold">Anedoctes :</p>
+        
         <p class="txtBold">Qualités :</p>
       </div>
 
@@ -47,10 +46,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
     </div>
   </div>
   
-  <a class="bouton boutonAnnonce" href="#">Valider</a>
+  
 </section>
 <?php }
   ?>
+<input class="bouton boutonVert" type="button" name="name" value="Contacter"/>
 
 
 <?php $this->stop('main_content') ?>

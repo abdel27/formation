@@ -30,10 +30,10 @@
 
 	// Regénérer le mot de passe
 	['GET','/lienspassword','Default#lienspassword', 'lienspassword'],
-	['POST','/lienspassword','Default#lienspasswordaction', 'lienspasswordaction'],
+	
 
 	// Page annonce unique
-	['GET','/detail','Default#detail', 'detail'],
+	['GET','/detail/[:id]','Default#detail', 'detail'],
 
 	//Page profil utilisateur
 	['GET','/profil','Default#profiluser', 'profiluser'],

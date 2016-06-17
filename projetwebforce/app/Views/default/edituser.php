@@ -34,6 +34,14 @@
           
           <input type="text" name="prenom" id="prenom" class="form-control" value="<?php echo $user['prenom'];  ?>" />
         </div>
+
+        <div class="form-group">
+            <label for="naissance">Date de naissance</label>
+
+            <!--Affichage des message d'erreur si les contraintes ne sont pas respectées-->
+            
+            <input type="text" name="naissance" id="naissance" class="form-control" value="<?php  echo $user['created_at'];  ?>" />
+        </div> 
       
 
         <div class="form-group">
@@ -67,20 +75,13 @@
         
         </div>
 
+
         <div class="form-group">
-            <label for="password1">Password</label>
-
-            <!--Affichage des message d'erreur si les cntraintes ne sont pas respectées-->
-            
-            <input type="password" name="password" id="password" class="form-control" value="<?php echo $user['password'];  ?>" />
-        </div>
-
-         <div class="form-group">
             <label for="naissance">Date de naissance</label>
 
             <!--Affichage des message d'erreur si les contraintes ne sont pas respectées-->
             
-            <input type="text" name="naissance" id="naissance" class="form-control" value="<?php  echo $user['naissance'];  ?>" />
+            <input type="text" name="naissance" id="naissance" class="form-control" value="<?php  echo $user['date_naissance'];  ?>" />
         </div> 
 
         <div class="form-group">
@@ -104,7 +105,7 @@
 
           <!--Affichage des message d'erreur si les cntraintes ne sont pas respectées-->
           
-          <input type="text" name="last" id="last" class="form-control" value="<?php  echo $user['last'];  ?>" />
+          <input type="text" name="last" id="last" class="form-control" value="<?php  echo $user['last_connection'];  ?>" />
         </div>
 
         <div class="form-group">
@@ -120,7 +121,7 @@
 
           <!--Affichage des message d'erreur si les cntraintes ne sont pas respectées-->
           
-          <input type="text" name="postal" id="postal" class="form-control" value="<?php echo $user['postal'];  ?>" />
+          <input type="text" name="postal" id="postal" class="form-control" value="<?php echo $user['codepostal'];  ?>" />
         </div>
 
         <div class="form-group">
@@ -128,7 +129,7 @@
 
           <!--Affichage des message d'erreur si les cntraintes ne sont pas respectées-->
           
-          <input type="text" name="ville" id="ville" class="form-control" value="<?php echo $user['ville'];  ?>" />
+          <input type="text" name="ville" id="ville" class="form-control" value="<?php echo $user['city'];  ?>" />
         </div>
 
         <div class="form-group">
