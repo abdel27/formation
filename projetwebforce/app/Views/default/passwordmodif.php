@@ -7,15 +7,21 @@
 
 <h1>Modifier votre mot de passe</h1>
 
-  <form method="post">
-        <label for="newpassword">Votre nouveau mot de passe</label>
-        <input type="password" name="newpassword" id="newpassword"/>
+  <form action="" method="post">
 
+   <div class="form-group">
+        <label for="newpassword">Votre nouveau mot de passe</label>
+        <input type="password" name="newpassword" id="newpassword" class="form-control"/>
+   </div>
+
+   <div class="form-group">
         <label for="newpassword2">Confirmer votre mot de passe</label>
-        <input type="password" name="newpassword2" id="newpassword2"/>
-       
-        <input type="submit" name="submit" value="modifier"/>
+        <input type="password" name="newpassword2" id="newpassword2" class="form-control"/>
+   </div>    
+        <input type="submit" name="submit" value="modifier" class="boutonVert bouton"/>
         
   </form> 
+
+<?php $this->stop('main_content') ?>
 
 
