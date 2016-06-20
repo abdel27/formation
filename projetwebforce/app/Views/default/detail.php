@@ -6,17 +6,22 @@
 <section class="mainWrapper">
   <!-- Titre -->
   <div class="titreCentre">
-    <h2><?= $details['nom'];?></h2>
+  <?php foreach ($details as $detail) {?>
+
+    <h2><? echo $detail['nom']; ?></h2>
     <!-- Sous titre / Description -->
-    <p class="txtAnnonce"><?= $details['description'];?></p>
+    <p class="txtAnnonce"> <?php echo $detail['description'] ;?> </p><?php }?>
+
   </div>
 
   <!-- Contenu -->
   <div class="contentAnnonce">
     <img class="imageAnnonce" src="http://placehold.it/720x360" alt="Image test" />
 
+
     <!-- Textes -->
     <div class="descriptionAnnonce">
+    <?php foreach ($details as $detail) { ?>
       <!-- Bloc de texte gauche -->
       <div class="boldAnnonce">
         <p class="txtBold">Espèce :</p>
@@ -29,6 +34,7 @@
 
       <!-- Bloc de texte droit -->
       <div class="LightAnnonce">
+
         <p class="txtAnnonce"><?= $details['idespece'];?></p>
         <p class="txtAnnonce"><?= $details['idrace'];?></p>
         <p class="txtAnnonce"><?= $details['age'];?></p>
@@ -41,6 +47,11 @@
   <div class="titreCentre">
     <input class="bouton boutonVert" type="button" name="name" value="Contacter">
   </div>
+
 </section>
+<?php }
+  ?>
+<input class="bouton boutonVert" type="button" name="name" value="Contacter"/>
+
 
 <?php $this->stop('main_content') ?>

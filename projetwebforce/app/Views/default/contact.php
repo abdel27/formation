@@ -18,7 +18,7 @@
         <label for="prenom">Prénom *</label><br>
         <!--Affichage des message d'erreur si les contraintes ne sont pas respectées-->
         <span class="error"><?php if(!empty($error['prenom'])) { echo $error['prenom']; } ?></span>
-        <input type="text" prenom="prenom" id="prenom" class="form-control" value="<?php if(!empty($_POST['prenom'])) { echo $_POST['prenom']; } ?>" />
+        <input type="text" name="prenom" id="prenom" class="form-control" value="<?php if(!empty($_POST['prenom'])) { echo $_POST['prenom']; } ?>" />
       </div>
 
       <!-- LOF -->

@@ -4,82 +4,95 @@
 
 
 <!-- Identité de l'utilisateur -->
-	<div class="mainWrapper contentUser">
+	<div class="contentUser">
 		<img class="imageUser" src="http://placehold.it/215x215" alt="Image test" />
 
 		<div class="user">
 			<div class="titreUser">
-				<h1>John Doe (Dept)</h1>
-				<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+				<h2>John Doe (01)</h2>
+
+				<a href="#">
+					<i class="fa fa-cog fa-2x" aria-hidden="true"></i>
+				</a>
 			</div>
 
+
 			<div class="nomUser">
-				<div class="boldAnnonce">
-					<p class="txtBold">Pseudo :</p>
-					<p>JohnnyDoe1</p>
+				<div class="nomUserInfo">
+					<div>
+						<p class="txtBold">Pseudo :</p>
+					</div>
+					<div class="txtLight">
+						<p>JohnnyDoe01</p>
+					</div>
 				</div>
 
-				<div class="boldAnnonce">
-					<p class="txtBold">Email :</p>
-					<p>jdoe@toutotu.com</p>
+				<div class="nomUserInfo">
+					<div>
+						<p class="txtBold">Email :</p>
+					</div>
+					<div class="txtLight">
+						<p>jdoe@gmail.com</p>
+					</div>
 				</div>
 
-				<div class="boldAnnonce">
-					<p class="txtBold">Inscrit depuis :</p>
-					<p>01/04/2016</p>
+				<div class="nomUserInfo">
+					<div>
+						<p class="txtBold">Inscrit depuis :</p>
+					</div>
+					<div class="txtLight">
+						<p>10/03/2015</p>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 
+
 <!-- Nombre d'annonces mises en ligne -->
-	<h2>Annonces mise en ligne (nombre)</h2>
+	<h3>Annonce(s) mise(s) en ligne (nombre)</h3>
 
 <!-- Affichage des résultats -->
 <div class="homeWrapper">
-	<?php foreach ($annonces as $annonce) { ?>
 
+<?php foreach ($annonces as $annonce) { ?>
 
 	<article class="detailAnnonce">
-		<img class="imageDetail" src="http://placehold.it/720x360" alt="" />
-			<div class="texteAnnonceHome">
-				<div class="titreUser">
-					<h3><?= $annonce['nom']; ?></h3>
-					<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-				</div>
+		<img class="imageDetail" src="http://placehold.it/720x360" alt="iouyglftcrxcfygvuhbijnoiulygftidru" />
+			<div class="texteDetailAnnonce">
+				<h3><?php echo $annonce['nom']; ?></h3>
+
 				<div class="descriptionAnnonce">
 					<div class="boldAnnonce">
-						<p class="txtBold">Espèce :</p>
-						<p class="txtBold">Race :</p>
-						<p class="txtBold">Age :</p>
-						<p class="txtBold">Sexe :</p>
-						<p class="txtBold">LOF :</p>
-				    <p class="txtBold">Activités :</p>
-				    <p class="txtBold">Ancedotes :</p>
-				    <p class="txtBold">Qualités :</p>
+						<p class="txtBold">Espèce : </p>
+						<p class="txtBold">Race : </p>
+						<p class="txtBold">Age : </p>
+						<p class="txtBold">Sexe : </p>
+						<p class="txtBold">LOF : </p>
+				    <p class="txtBold">Activités : </p>
+				    <p class="txtBold">Qualités : </p>
 					</div>
 
-					<div class="LightAnnonce">
-						<p class="txtLight">Espèce</p>
-						<p class="txtLight">Race</p>
-						<p class="txtLight">Age</p>
-						<p class="txtLight">Sexe</p>
-						<p class="txtLight">LOF</p>
-						<p class="txtLight">Activités</p>
-						<p class="txtLight">Ancedotes</p>
-						<p class="txtLight">Qualités</p>
+					<div class="lightAnnonce">
+						<p> <?= $annonce['idespece']; ?></p>
+						<p><?= $annonce['idrace']; ?></p>
+						<p><?= $annonce['age']; ?></p>
+						<p><?= $annonce['sexe']; ?></p>
+						<p><?= $annonce['lof']; ?></p>
+						<p><?= $annonce['description']; ?></p>
+						<p><?= $annonce['qualites']; ?></p>
 					</div>
 				</div>
 
-				<!-- Boutons consultation et suppression -->
-				<div class="titreCentre">
-					<input class="bouton boutonBleu" type="button" name="button" value="Consulter">
-					<input class="bouton boutonRouge" type="button" name="button" value="Supprimer">
+				<div class="boutonsAnnonce">
+						<a class="bouton boutonBleu" href="#">Consulter</a>
+						<a class="bouton boutonRouge" href="<?php $id = $annonce['id'] ; echo $this->url("deleteannonce", ["id" => $id]);?>">Supprimer</a>
 				</div>
 			</div>
 	</article>
-<?php } ?>
-</div>
 
+<?php } ?>
+
+</div>
 
 <?php $this->stop('main_content') ?>

@@ -46,15 +46,7 @@
 
 		<!-- FOOTER -->
 		<footer>
-			<nav>
-				<ul>
-          <li><a href="">Fonctionnement</a></li>
-  			 	<li><a href="">Equipe</a></li>
-  			 	<li><a href="">Nous contacter</a></li>
-				</ul>
-
 				<h2>Animals</h2>
-			</nav>
 		</footer>
 
 	</body>

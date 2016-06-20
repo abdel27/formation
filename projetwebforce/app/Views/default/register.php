@@ -12,7 +12,7 @@ $this->layout('layout', ['title' => 'Inscription']) ?>
       <p>Si vous n'avez pas encore de compte, inscrivez vous!</p>
     </div>
 
-
+  <!-- Formulaire -->
   <form action="<?php echo $this->url('registeraction'); ?>" method="POST" id="formulaire">
         <div class="form-group">
           <label for="nom">Nom *</label>
@@ -36,16 +36,11 @@ $this->layout('layout', ['title' => 'Inscription']) ?>
          </div>
 
         <div class="form-group">
-          <label for="departement">Departement *</label>
-          <!--Affichage des message d'erreur si les cntraintes ne sont pas respectées
+          <label for="departement">Departement *</label><br>
+          <!--Affichage des message d'erreur si les cntraintes ne sont pas respectées -->
           <span class="error"><?php if(!empty($error['departement'])) { echo $error['departement']; } ?></span>
-          <input type="text" name="departement" id="departement" class="form-control" value="<?php if(!empty($_POST['departement'])) { echo $_POST['departement']; } ?>" />-->
-          <select>
-                <option></option>
-                <?php
-                  //print_r($departements);
-                 foreach ($departements as $departement) {
-                ?>
+          <select name='departement' selected='selected'>
+                <?php foreach ($departements as $departement) { ?>
                 <option value="<?= $departement['idep']?>"> <?= $departement['nom'] ?>" </option>
                 <?php } ?>
 
@@ -54,14 +49,14 @@ $this->layout('layout', ['title' => 'Inscription']) ?>
 
          <div class="form-group">
            <label for="email">Email *</label>
-           <!--Affichage des message d'erreur si les cntraintes ne sont pas respectées-->
+           <!--Affichage des message d'erreur si les contraintes ne sont pas respectées-->
            <span class="error"><?php if(!empty($error['email'])) { echo $error['email']; } ?></span>
            <input type="text" name="email" id="email" class="form-control" value="<?php if(!empty($_POST['email'])) { echo $_POST['email']; } ?>" />
          </div>
 
          <div class="form-group">
-             <label for="password1">Mot de passe *</label>
-             <!--Affichage des message d'erreur si les cntraintes ne sont pas respectées-->
+             <label for="password">Mot de passe *</label>
+             <!--Affichage des message d'erreur si les contraintes ne sont pas respectées-->
              <span class="error"><?php if(!empty($error['password'])) { echo $error['password']; } ?></span>
              <input type="password" name="password" id="password" class="form-control" value="<?php if(!empty($_POST['password'])) { echo $_POST['password']; } ?>" />
          </div>
@@ -76,6 +71,6 @@ $this->layout('layout', ['title' => 'Inscription']) ?>
            <input class="bouton boutonVert" type="submit" name="submit" value="Inscription" />
          </div>
        </form>
-</div>
+     </div>
 
 <?php $this->stop('main_content') ?>

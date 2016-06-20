@@ -30,7 +30,7 @@
 
 	// Regénérer le mot de passe
 	['GET','/lienspassword','Default#lienspassword', 'lienspassword'],
-	['POST','/lienspasswordaction','Default#lienspasswordaction', 'lienspasswordaction'],
+
 
 	// Page annonce unique
 	['GET','/detail/[:id]','Default#detail', 'detail'],
@@ -42,7 +42,6 @@
 	['GET','/contact','Default#contact', 'contact'],
 
 
-
 // Back
   ['GET','/layoutback','View#layoutback', 'layoutback'],
 
@@ -52,10 +51,13 @@
 	// Gestion des utilisateurs
   ['GET','/manageuser','Default#manageuser', 'manageuser'],
 
+
 	// Edition des utilisateurs
   ['GET','/edituser/[:id]','Default#edituser', 'edituser'],
   ['POST','/edituser','Default#edituseraction', 'edituseraction'],
+
   ['GET','/deleteuser/[:id]','Default#deleteuser', 'deleteuser'],
+
 
 	// Gestion des annonces
 	['GET','/manageannonce','Default#manageannonce', 'manageannonce'],

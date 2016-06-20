@@ -94,6 +94,7 @@ a:hover{ text-decoration: none; color: white; }
 	border: 2px solid #E00000;
 }
 
+
 /* Survol boutons */
 .boutonVert:hover{
 	background: #B8E986;
@@ -106,6 +107,8 @@ a:hover{ text-decoration: none; color: white; }
 .boutonRouge:hover {
 	background: #E00000;
 }
+
+
 
 
 
@@ -126,11 +129,13 @@ nav,
 	max-width: 1180px;
 }
 
-/* Blocs blancs avec ombre */
+/* Blocs blancs avec ombre et arrondi */
 .mainWrapper,
 .detailAnnonce,
 .fullWidthHome,
-.annonceHome
+.annonceHome,
+.contentUser,
+.rechercheHome
 {
 	border-radius: 4px;
 	box-shadow: 0px 4px 3px 0px rgba(0,0,0,0.20);
@@ -147,7 +152,7 @@ nav,
 .mainWrapper {
 	max-width: 1180px;
 	width: 100%;
-	margin: 40px auto;
+	margin: 0 auto;
 	background: white;
 	padding: 20px;
 }
@@ -184,6 +189,7 @@ nav,
 .titreUser{
 	display: flex;
 	justify-content: space-between;
+
 	align-items: flex-start;
 	width: 100%;
 }
@@ -204,6 +210,7 @@ nav,
 
 .nomUser {
 	display: flex;
+	align-items: flex-end;
 
 	width: 100%;
 	margin-top: 30px;
@@ -214,22 +221,16 @@ nav,
 	max-width: 400px;
 }
 
-.nomUser li {
-	font-family: 'Droid Serif', serif;
-	display: inline;
-	margin-right: 20px;
-}
-
-.glyphicon, .glyphicon-cog {
-	font-size: 2em;
-	color: #CCCCCC;
+.fa-cog{
+	color: lightgrey;
 
 	transition: .3s;
 }
 
-.glyphicon:hover, .glyphicon-cog:hover {
+.fa-cog:hover {
 	color: #4A90E2;
 	cursor: pointer;
+	transform: rotate(45deg);
 }
 
 /* Bloc description détaillée de l'annonce */
@@ -237,11 +238,21 @@ nav,
 	background: white;
 	border-radius: 4px;
 	max-width: 48%;
+	width: 48%;
 	margin: 20px 1%;
 }
 
 .imageDetail {
 	width: 100%;
+}
+
+.texteDetailAnnonce h3 {
+	width: 50%;
+}
+
+.boutonsAnnonce{
+	display: flex;
+	justify-content: space-around;
 }
 
 
@@ -286,6 +297,11 @@ nav,
 
 /* Annonces de la page principale */
 
+.rechercheHome{
+	padding: 20px;
+	margin-bottom: 20px;
+}
+
 .homeWrapper{
 	flex-wrap: wrap;
 
@@ -305,15 +321,21 @@ nav,
 	width: 100%;
 }
 
-.texteAnnonceHome{
+.texteAnnonceHome, .texteDetailAnnonce {
 	padding: 5%;
 }
+
 
 .descriptionAnnonce{
 	display: flex;
 
 	width: 100%;
 	padding-top: 20px;
+}
+
+.texteAnnonceHome h3, .texteDetailAnnonce h3 {
+	padding-bottom: 5%;
+
 }
 
 
@@ -327,27 +349,35 @@ nav,
 	padding: 20px;
 }
 
-.labelRecherche label, .inputRecherche input{
-	padding: 5px;
-	border-radius: 4px;
+.recherche{
+	display: flex;
+	justify-content: space-between;
+}
+
+.form-recherche{
+	width: 100%;
 }
 
 .labelRecherche label{
-	width: 19.5%;
+	width: 21.5%;
 	margin: 0 auto;
 }
 
-.inputRecherche .input{
+.inputRecherche{
+	display: flex;
+	align-items: center;
+}
+
+.inputRecherche select{
 	width: 19.5%;
 	margin: 0 auto;
-	border: 1px solid lightgrey;
 }
 
 
 /* Page de login */
 .loginWrapper{
 	background: white;
-	max-width: 1920px;
+	width: 100%;
 	margin: 0 auto;
 }
 
@@ -357,6 +387,10 @@ nav,
 
 .loginWrapper .mainWrapper .form-group{
 	width: 30%;
+}
+
+.equipe{
+	background: #F1F1F1;
 }
 
 .imgLogin img{
@@ -394,6 +428,7 @@ nav,
 	padding: 20px;
 	width: 50%;
 	height: 50%;
+	min-height: 230px;
 }
 
 .fonctionnementLogin{
@@ -401,7 +436,12 @@ nav,
 	justify-content: space-around;
 	align-items: center;
 	margin: 10% auto;
+}
 
+.equipeInline{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
 .titreCentreWide{
@@ -427,6 +467,14 @@ nav,
 	cursor: pointer;
 }
 
+
+.loginContactForm form{
+	margin: 0 auto;
+}
+
+.loginContactForm form .form-group{
+	margin: 0 auto;
+}
 
 
 /*--- HEADER ---*/
@@ -484,6 +532,6 @@ header, footer {
 /*--- FOOTER ---*/
 
 footer {
-	margin: 0 auto;
+	margin: 40px auto 0;
 	padding: 20px;
 }
