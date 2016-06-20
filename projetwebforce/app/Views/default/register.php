@@ -45,13 +45,13 @@ $this->layout('layout', ['title' => 'register']) ?>
           <!--Affichage des message d'erreur si les cntraintes ne sont pas respectées
           <span class="error"><?php if(!empty($error['departement'])) { echo $error['departement']; } ?></span>
           <input type="text" name="departement" id="departement" class="form-control" value="<?php if(!empty($_POST['departement'])) { echo $_POST['departement']; } ?>" />-->
-          <select name='departement' selected='selected'>
-                <option></option>
+          <select name='departement' >
+                <option selected='selected'></option>
                 <?php
                   //print_r($departements);
                  foreach ($departements as $departement) {
                 ?>
-                <option value="<?php echo $departement['idep']?>"> <?php echo $departement['nom'] ?>" </option>
+                <option value="<?php echo $departement['idep']?>"> <?php echo $departement['idep'].' : '. $departement['nom'] ?>" </option>
                 <?php } ?>
 
           </select>

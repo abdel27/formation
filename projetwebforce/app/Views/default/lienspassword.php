@@ -6,7 +6,7 @@
 <p>Veuillez cliquer sur le lien ci-dessous</p>
 
 
-<p><a class='lienTxt' href="<?php $token = $user['token'] ; $email = $user['email']; echo $this->url("passwordmodif");
+<p><a class='lienTxt' href="<?php $id=$user['id']; $token = $user['token'] ; $email = $user['email']; echo $this->url("passwordmodif" , ["id" => $id]);
             ?>">ICI</a></p>
 
 </div>

@@ -55,7 +55,7 @@ public function findEmailToken() {
 
 public function countUser() {
 
-  $sql = "SELECT COUNT(*) FROM user";
+  $sql = "SELECT COUNT(*) FROM ab_user";
           $stmt = $dbh->prepare($sql);
           $stmt->execute();
           $count = $stmt->fetch();
@@ -64,14 +64,26 @@ public function countUser() {
 
 //Fontion qui comptabilise le nombre d'utilisateur bloqué
 
-public function banUser() {
+public function countbanUser() {
 
-  $sql = "SELECT COUNT(*) FROM user WHERE active = 'no'";
+  $sql = "SELECT COUNT(*) FROM ab_user WHERE active = 'no'";
           $stmt = $dbh->prepare($sql);
           $stmt->execute();
           $count = $stmt->fetch();
           return $count;
 }
+
+
+//Fonction qui test si l'utilisateur est bloqué return true si oui
+
+public function banUser() {
+
+  $user = $model->findAll();
+
+
+}
+
+
 
 }
 
