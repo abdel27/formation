@@ -17,55 +17,51 @@
 	['GET','/logout','Default#logout', 'logout'],
 
 	// Ajouter une annonce
-  ['GET','/newannonce','Default#newannonce', 'newannonce'],
-  ['POST','/newannonce','Default#newannonceaction', 'newannonceaction'],
+  ['GET','/newannonce','Annonce#newannonce', 'newannonce'],
+  ['POST','/newannonce','Annonce#newannonceaction', 'newannonceaction'],
 
 	// Mot de passe oublié
-	['GET','/forget','Default#forget', 'forget'],
-	['POST','/forget','Default#forgetaction', 'forgetaction'],
+	['GET','/forget','Password#forget', 'forget'],
+	['POST','/forget','Password#forgetaction', 'forgetaction'],
 
 	// Modifier le mot de passe
-	['GET','/passwordmodif','Default#passwordmodif', 'passwordmodif'],
-	['POST','/passwordmodif','Default#passwordmodifaction', 'passwordmodifaction'],
+	['GET','/passwordmodif/[:email]/[:token]','Password#passwordmodif', 'passwordmodif'],
+	['POST','/passwordmodif','Password#passwordmodifaction', 'passwordmodifaction'],
 
 	// Regénérer le mot de passe
-	['GET','/lienspassword','Default#lienspassword', 'lienspassword'],
+	['GET','/lienspassword/[:id]','Password#lienspassword', 'lienspassword'],
 
 
 	// Page annonce unique
-	['GET','/detail/[:id]','Default#detail', 'detail'],
+	['GET','/detail/[:id]','Annonce#detail', 'detail'],
 
 	//Page profil utilisateur
-	['GET','/profil','Default#profiluser', 'profiluser'],
+	['GET','/profil','User#profiluser', 'profiluser'],
 
 	// Page contact
-	['GET','/contact','Default#contact', 'contact'],
+	['GET','/contact','Contact#contact', 'contact'],
+
+	//Page delete annonce
+	['GET','/deleteannonce/[:id]','Annonce#deleteannonce', 'deleteannonce'],
+
+	//Récupérer une annonce
+	['GET','/manageannonce','Annonce#manageannonce', 'manageannonce'],
 
 
 // Back
   ['GET','/layoutback','View#layoutback', 'layoutback'],
 
 	// Accueil dashboard
-	['GET','/dashboard','Default#dashboard', 'dashboard'],
+	['GET','/dashboard','Dashboard#dashboard', 'dashboard'],
 
 	// Gestion des utilisateurs
-  ['GET','/manageuser','Default#manageuser', 'manageuser'],
+  ['GET','/manageuser','User#manageuser', 'manageuser'],
 
 
-	// Edition des utilisateurs
-  ['GET','/edituser/[:id]','Default#edituser', 'edituser'],
-  ['POST','/edituser','Default#edituseraction', 'edituseraction'],
+  ['GET','/edituser/[:id]','User#edituser', 'edituser'],
+  ['POST','/edituser','User#edituseraction', 'edituseraction'],
 
-  ['GET','/deleteuser/[:id]','Default#deleteuser', 'deleteuser'],
-
-
-	// Gestion des annonces
-	['GET','/manageannonce','Default#manageannonce', 'manageannonce'],
-	['GET','/editannonce/[:id]','Default#editannonce', 'editannonce'],
-	['GET','/deleteannonce/[:id]','Default#deleteannonce', 'deleteannonce'],
-
-	// Autorisation des annonces
-	['GET','/postannonce','Default#postannonce', 'postannonce'],
+  ['GET','/deleteuser/[:id]','User#deleteuser', 'deleteuser'],
 
 
-	);
+);

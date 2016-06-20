@@ -39,9 +39,20 @@ $this->layout('layout', ['title' => 'Inscription']) ?>
           <label for="departement">Departement *</label><br>
           <!--Affichage des message d'erreur si les cntraintes ne sont pas respectées -->
           <span class="error"><?php if(!empty($error['departement'])) { echo $error['departement']; } ?></span>
+<<<<<<< HEAD
           <select name='departement' selected='selected'>
                 <?php foreach ($departements as $departement) { ?>
                 <option value="<?= $departement['idep']?>"> <?= $departement['nom'] ?>" </option>
+=======
+          <input type="text" name="departement" id="departement" class="form-control" value="<?php if(!empty($_POST['departement'])) { echo $_POST['departement']; } ?>" />-->
+          <select name='departement' >
+                <option selected='selected'></option>
+                <?php
+                  //print_r($departements);
+                 foreach ($departements as $departement) {
+                ?>
+                <option value="<?php echo $departement['idep']?>"> <?php echo $departement['idep'].' : '. $departement['nom'] ?>" </option>
+>>>>>>> origin/master
                 <?php } ?>
 
           </select>

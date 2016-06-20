@@ -23,6 +23,11 @@
 
 	<body>
 
+<<<<<<< HEAD
+=======
+
+<header>
+>>>>>>> origin/master
 
 		<!-- HEADER -->
 		<header>
